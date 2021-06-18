@@ -1,0 +1,406 @@
+@media screen and (max-width: 1025px) {
+.left_side_menu_1 .app-aside{left: 0 !important}
+.left_side_menu_1{z-index: 500; width: 200px !important;     margin-left: -200px;}
+.app-aside-folded .left_side_menu_1 {
+    width: 122px !important;
+    margin-left: 0;
+    z-index: 5000;
+}
+
+.left_side_menu_1 .app-aside {
+    float: left;
+    width: auto;
+}
+.app-aside-folded .left_side_menu_1 .app-aside {
+    float: left;
+    width:122px;
+}
+
+.app-aside-folded .left_side_menu_1  .bottomMenu {
+    left:4%;
+}
+
+.app-aside-folded .right_side_bar_sell_screen {
+    
+    margin: 0 10px 0 0;
+    padding: 0 20px 8% 2%;
+}
+
+.right_side_bar_sell_screen {
+    
+    margin: 0 10px 0 0;
+    padding: 0 20px 8% 2%;
+}
+
+.app-content_right_side {
+    float: right;
+   width: 100% !important;
+}
+
+
+.app-aside-folded .app-content_right_side {
+    float: right;
+    width: 95%;
+}
+
+
+
+
+
+/*left side menu*/
+.bottomMenu {
+    opacity: 0;
+}
+.app-aside-folded .bottomMenu {
+    
+    opacity: 10;
+}
+.app-aside-folded .left_side_menu {
+    width: 100%;
+    position: fixed;
+
+}
+.app-aside-folded .right_side_content {
+    float: right;
+    width: 100%;
+}
+
+.left_side_menu {
+    width: 17%;
+    z-index: 50;
+    position: fixed;
+}
+.right_side_content {
+    float: right;
+    width: 100%;
+}
+    
+    .app-aside{ left: -62px}
+    .app-aside-folded .app-aside{ width:100px; left: 0px}
+    .app-aside-folded .submenu {
+    float: left;
+    width: 35%;
+    padding: 47px 2px 1px 18px !important;
+    opacity: 10;
+}
+.submenu{opacity: 0}
+.bottomMenu {
+    left:2.5%;
+}
+
+.menu-toogler{right: -32px; 
+    
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    
+    line-height: 30px;}
+  .sell .product_area img{width: 50%}
+    .sell .product_area {
+    height: 100px;
+    width: 100px;
+    line-height: 87px;
+}
+.sell .col-sm-3 {
+    max-width: 50%;
+    float: left;
+    flex: 0 0 50%;
+}
+    .top_buttons_bar .btn-secondary{padding: 19px 0 !important}
+
+    .top_buttons_bar .col-sm-3{width: 33%;}
+    .top_buttons_bar .col-sm-5{width: 33%;}
+    .top_buttons_bar .col-sm-4{width: 33%;}
+    #search_customer_con{text-align: center;}
+.top_buttons_bar .col-sm-3 b{font-size: 15px;}
+.discard {
+    margin-top: 0 !important; font-size: 0
+}
+.discard i{font-size: 15px;}
+.dropdown-menu.show {
+    display: block;
+    margin-left: -74px;
+}
+#selected_products .col-sm-3 {
+    width: 40%;
+}
+#selected_products .col-sm-8 {
+    width: 50% ;
+}
+#selected_products .col-sm-1 {
+    width: 5% ;
+}
+.arrow_c {
+    position: absolute;
+        right: -270px;
+    top: -44px;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 769px) {
+.bottomMenu {
+    left: 4%;
+}
+.app-aside-folded .left_side_menu_1 .bottomMenu {
+    left: 5%;
+}
+/*left side menu*/
+.app-aside-folded .left_side_menu {
+    width: 100%;
+    z-index: 600;
+    position: fixed;
+
+}
+.app-aside-folded .right_side_content {
+    float: right;
+    width: 100%;
+}
+
+.left_side_menu {
+    width: 23%;
+    z-index: 50;
+    position: fixed;
+}
+.right_side_content {
+    float: right;
+    width: 100%;
+}
+/*left sdie menu  end*/
+
+
+ /*Sell Screen css*/   
+ .sell_point .scol-sm-8{width: 100%; max-width: 100%;}
+.sell_point .scol-sm-4{width: 100%;max-width: 100%; flex: auto}
+
+.sell {
+    width: auto;
+    overflow: auto !important;
+    padding: 0px 0 15px 0;
+    text-align: left;
+    white-space: nowrap;
+    display: -webkit-box;
+}
+.sell .col-sm-3 {
+    max-width: 170px;
+    float: inherit;
+    flex: inherit;
+    display: inline-block;
+}
+.sell h2{    white-space: initial;}
+/*Sell Screen css ends*/
+
+header .logo{display: none;}
+#main{margin:0 !important }
+.viewbtn a{margin: 0 0 15px 0}
+.viewbtn{ display:inline-block !important;position: relative !important;
+    display: block;
+    top: auto !important;
+    left: auto !important;
+    transform: initial !important;
+    text-align: center; margin: 0 0 15px 0}
+    .tabs .nav-tabs .nav-link{width: 100%}
+     .tabs .nav-tabs li{width: 100%; float: left;}
+
+.subscription .sbox span img{width: 100%; height: auto;}
+
+.sbox{margin: 0 0 15px 0}
+
+.right_side_bar_sell_screen{position: relative;}
+.paybtn {
+    z-index: 500;
+    position: fixed;
+    width: auto;
+    bottom: 0;
+    right: -2px;
+    display: block;
+    left: 0;
+}
+.quantity {
+    position: relative;
+    left: 0;
+    display: block;
+    background: #fff;
+    top: 9px;
+    padding: 15px 15px 0px 15px;
+    border-radius: 4px;
+    z-index: 500000;
+}
+.search_customer {left: 15px;}
+#search_customer_con{margin:  0 0 15px 0 !important}
+.discard{margin-top: 15px;}
+.custom_r{margin-bottom: 15px}
+#regForm {
+    margin: 15px 0;
+    padding: 15px;
+    width: auto;
+    min-width: auto;
+}
+.step{margin: 10px 5px 0 5px;}
+.responsive-img{width: 100% !important; max-width: 100% !important; height: auto !important;}
+.badge{white-space: initial;}
+.h-501 {
+    width: 75px;
+    margin-left: 36px;
+}
+.product_displayed .custom-checkbox{margin:  0 0 15px 0}
+.add_variant label{margin: 10px 0 5px 0}
+.completed{padding: 15px !important;}
+.packages .sbox {
+    min-height: a;
+}
+.right_side_bar_sell_screen{margin: 0 !important}
+#selected_products .col-sm-3 {
+    width: 40%;
+}
+#selected_products .col-sm-8 {
+    width: 50%;
+}
+#selected_products .col-sm-1 {
+    width: 5%;
+}
+.arrow_c {
+    position: absolute;
+    right:-5px;
+    top:11px;
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+	.app-aside-folded .left_side_menu_1 .bottomMenu {
+    left: 10%;
+}
+.top_buttons_bar_mobile .btn-secondary:hover{background: inherit !important; border: 0 !important}
+.top_buttons_bar_mobile .btn-secondary{border: 0 !important}
+
+    .total_amount_tab_sell {
+    padding: 0;
+}
+.sell {
+    margin: 25px 0 0px 0;
+}
+.sell_point .greybg1{padding: 7px !important; }
+
+    .sell .col-sm-3 .card{min-height: 208px;}
+#selected_products input{width:100%; padding: 0 5px 0 0;
+    text-align: center; height: 40px;}
+#selected_products_detail hr{display: none;}
+#selected_products_detail textarea.form-control {
+   
+    margin: -15px 0 0 0;
+}
+#selected_products_detail input{margin: 0 0 10px 0}
+.tab-content input{margin: 0 0 10px 0 !important}
+#selected_products small{display: none;}
+ .top_buttons_bar_mobile{margin: 0 -4px 10px -4px;}
+ .top_buttons_bar_mobile .col-sm-3{padding: 0 4px}
+ .top_buttons_bar_mobile .col-sm-5{padding: 0 4px}
+ .top_buttons_bar_mobile .col-sm-4{padding: 0 4px}
+.top_buttons_bar .btn-secondary {
+padding: 1px 0 !important;
+    background: none !important;
+    color: #000 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+    .app-aside {
+    left: 0;
+}
+
+
+
+
+.app-aside-folded .submenu {
+    float: right;
+    width:66%;
+    padding: 47px 2px 1px 18px !important;
+    opacity: 10;
+}
+.submenu{opacity: 0}
+.bottomMenu {
+    left: 10%;
+}
+.app-aside {
+    float: left;
+    position: fixed;
+    z-index: 50;
+    width: 0%;
+}
+.menu-toogler{right: -32px; 
+    
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    
+    line-height: 30px;}
+
+.arrow_c {
+position: absolute;
+    right: -5px;
+    top: 26%;
+    display: inline-block !important;
+    width: auto;
+}
+
+.aside-wrap{display: none;}
+.app-aside-folded .app-aside .aside-wrap{display:block;}
+.app-aside-folded .app-aside {
+    width:34.2%;
+}
+.app-aside:before{width: auto;}
+#selected_products .col-sm-1 {
+        width: 17%;
+    float: right;
+}
+
+
+
+}
+
+
+
+
+@media screen and (max-width: 769px){
+#selected_products .col-sm-3 {
+    width: 80px;
+    padding-right: 0px; 
+}
+
+
+/*==============
+store setup screens css
+++++++=============
+*/
+.w-1 {
+    width:100%;
+    float: inherit;
+}
+.w-1 .m-col {
+    position: relative;
+    width: 100%;
+}
+.w-2{display: none;}
+.m-col .col-xl-12{padding: 0 !important}
+.bottom-btns .btn{ display: inline-block; }
+.bottom-btns{text-align: center;}
+
+}
+
+
+@media screen and (max-width: 320px){
+.arrow_c{
+    right: 8px;
+}
+
+
+}
+
+
+
+

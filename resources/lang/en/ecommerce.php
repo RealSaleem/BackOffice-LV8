@@ -1,0 +1,36 @@
+ <?php
+
+return [
+	'setup' 						=> 'Ecommerce Setup',
+	'setupecommerce' 				=> 'Setup your ecommerce',
+	'setupmessage' 					=> 'Setup your nextaxe ecommerce website',
+	'storenamemessage' 				=> 'Give your Ecommerce store a name',
+	'storename' 					=> 'Store Name',
+	'next' 							=> 'Next',
+	'previous' 						=> 'Previous',
+	'skip' 							=> 'Skip',
+	'domainnamemessage' 			=> 'Enter your domain for your Website',
+	'domainname' 					=> 'Domain Name',
+	'step1' 						=> 'Step 1',
+	'step2' 						=> 'Step 2',
+	'step3' 						=> 'Step 3',
+	'step1line' 					=> 'copy name servers:',
+	'step2line' 					=> 'goto your domain registrar settings',
+	'step3line' 					=> 'paste the Name Servers under the DNS settings',	
+	'domainname' 					=> 'Domain Name',
+	'congratulations' 				=> 'Congratulations',
+	'domainsetupmessage' 			=> 'Your domain is ready for setup',
+	//// details
+	'header' 						=> 'Header',
+	'add_social_media_links' 		=> 'Add soical media icons',
+	'add_more' 						=> 'Add More',
+	'complete' 						=> 'Click to Complete',
+	'ViewSite' 						=> 'View Site',
+	'url'							=>	'Url',
+	'edit'							=>	'Edit',
+	'edit_setup'					=>	'Edit Setup',
+	'back'							=>	'Back',
+	'update'						=>	'Update',
+	'cancel'						=>	'Cancel',
+	
+];

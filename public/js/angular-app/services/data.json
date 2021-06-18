@@ -1,0 +1,128 @@
+[{
+	"table": "products",
+	"rows":
+	[
+		{
+			"id" : 1,
+			"category" : " ",
+			"brand" : " ",
+			"supplier" : " ",
+			"description": "Mouse",
+			"attribute_1": " ",
+			"attribute_2": " ",
+			"attribute_3": " "
+		},
+		{
+			"id" : 2,
+			"category" : " ",
+			"brand" : " ",
+			"supplier" : " ",
+			"description": "Keyboard",
+			"attribute_1": " ",
+			"attribute_2": " ",
+			"attribute_3": " "
+		},
+		{
+			"id" : 3,
+			"category" : " ",
+			"brand" : " ",
+			"supplier" : " ",
+			"description": "LCD",
+			"attribute_1": "size",
+			"attribute_2": " ",
+			"attribute_3": " "
+		},
+		{
+			"id" : 4,
+			"category" : " ",
+			"brand" : " ",
+			"supplier" : " ",
+			"description": "CPU",
+			"attribute_1": " ",
+			"attribute_2": " ",
+			"attribute_3": " "
+		},
+		{
+			"id" : 5,
+			"category" : " ",
+			"brand" : " ",
+			"supplier" : " ",
+			"description": "PC",
+			"attribute_1": " ",
+			"attribute_2": " ",
+			"attribute_3": " "
+		}
+	]
+},{
+	"table": "product_variants",
+	"rows":
+	[
+		{
+			"product_id": 1,
+			"supplier_price": 11,
+			"attribute_value_1": " ",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 1,
+			"retail_price": 11,
+			"sku": "3",
+			"image": " "
+		},
+		{
+			"product_id": 2,
+			"supplier_price": 112,
+			"attribute_value_1": " ",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 1,
+			"retail_price": 13,
+			"sku": "222",
+			"image": " "
+		},
+		{
+			"product_id": 3,
+			"supplier_price": 111,
+			"attribute_value_1": "19'",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 11,
+			"retail_price": 133,
+			"sku": "12312312",
+			"image": " "
+		},
+		{
+			"product_id": 3,
+			"supplier_price": 155,
+			"attribute_value_1": "21'",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 12,
+			"retail_price": 1334,
+			"sku": "123123123s",
+			"image": " "
+		},
+		{
+			"product_id": 5,
+			"supplier_price": 200,
+			"attribute_value_1": " ",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 12,
+			"retail_price": 123123,
+			"sku": "213123dfs",
+			"image": " "
+		},
+		{
+			"product_id": 4,
+			"supplier_price": 300,
+			"attribute_value_1": " ",
+			"attribute_value_2": " ",
+			"attribute_value_3": " ",
+			"markup": 122,
+			"retail_price": 21312,
+			"sku": "123sd",
+			"image": " "
+		}
+	]
+}
+]

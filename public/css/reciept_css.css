@@ -1,0 +1,37 @@
+.reciept_body{ font-family: verdana; font-size: 12px;}
+.main_wrapper{width:380px; padding: 4px 10px; border:#ccc solid 1px; }
+.main_wrapper .logo img{width: 120px;}
+.main_wrapper .logo {text-align: center; padding: 7px 0;}
+.main_wrapper .contact_detail_top{ background: #f2f2f2; padding: 10px 15px; margin-top: 10px; line-height: 20px;  }
+.main_wrapper .contact_detail_top p{ margin: 0;  color: #000; font-size: 12px;}
+.main_wrapper .transaction_detail{ padding:0; margin-top: 10px; line-height: 20px; }
+.main_wrapper .transaction_detail p{ margin: 0;  color: #333; font-size: 12px;}
+.main_wrapper .receipt_no{ text-align: center; font-size: 18px; }
+.main_wrapper .table_data{ font-size: 12px; text-align: left;  margin-top: 15px;}
+.main_wrapper .table-bordered thead tr{background:#000000; color: #fff; }
+.main_wrapper .table-bordered thead tr th{font-weight: 500}
+  .main_wrapper .total{border-top:#333 solid 1px; }
+.main_wrapper .total td{ font-weight: 400;padding: 12px 7px !important;}
+
+  .main_wrapper .netvalue td{ color: #000 !important; font-weight: 600;padding: 15px 7px !important;}
+.main_wrapper  .table-bordered>tbody>tr>th,  .table-bordered>tfoot>tr>th,  .table-bordered>thead>tr>th {
+  border: 1px solid #ddd; padding: 7px 7px;  }
+  .main_wrapper .table-bordered tr td{ color: #000000;padding: 17px 7px; }
+  .main_wrapper .table-bordered {
+    border-spacing: 0;width: 100% ;
+  border-collapse: collapse;
+ }
+  .main_wrapper .thanksMessage p{text-align: center; padding: 15px 0; color: #000000;    font-size: 12px;}
+  
+  .main_wrapper  .pintrum_logo  img{width: 130px;}
+.main_wrapper  .pintrum_logo  {text-align: center; padding: 7px 0;}
+ .main_wrapper .barcode  img{width: 170px;}
+.main_wrapper  .barcode  {text-align: center; padding: 5px 0;}
+ .main_wrapper .footer{ text-align: center; color: #333; background: #f2f2f2; font-size: 11px; padding: 3px 15px; margin-top: 10px; line-height: 16px;  }
+.main_wrapper .footer span{display: block;}
+.no_slip_heading{background:#000000; color: #fff; font-size: 15px; text-align: center; padding: 8px 0}
+.table_plan{ width: 100% ; border-spacing: 0;
+  border-collapse: collapse; color: #000000
+ }
+.table_plan tr td{
+  padding: 3px 7px;  }

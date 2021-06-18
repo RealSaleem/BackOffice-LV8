@@ -1,0 +1,70 @@
+/*======================
+Main Wrapper
+=======================*/
+.table-striped tbody tr:nth-of-type(odd){background: #FCFAFA;}
+.greybg1{background: #FCFAFA; }
+.greybg2{background-color: #FCFAFA; }
+.bg-light{background: #fff !important}
+em{color: red}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f0aa4b;
+    outline: 0;
+    box-shadow: none;
+}
+.cursor{cursor: pointer;}
+
+/*All Colors*/
+/*buttons colors*/
+.btn-primary{ border: 0 !important; background: #4eacb3}
+.btn-primary:hover{background: #f0aa4b;}
+.btn-secondary{ border: 0 !important; background: #f0aa4b}
+.btn-secondary:hover{border: 0 ; background: #4eacb3}
+
+/*background colors*/
+.bg-primary{ border: 0 ; background: #4eacb3 !important}
+.bg-secondary{background: #f0aa4b !important}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #ec9a4b;
+    background-color: #ec9a4b;
+
+}
+
+
+.tabs .nav-tabs .nav-item.show .nav-link, .tabs .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff !important;
+    border: #ec9a4b solid  2px;
+}
+a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover {
+     color: #495057;
+    background-color: #fff !important;
+    border: #ec9a4b solid  2px;
+}
+
+.nav-tabs .nav-link.active i{color: #ec9a4b;}
+.border-primary{border-color: #ec9a4b !important}
+.text-warning{color:#ec9a4b !important}
+.badge-primary{background:#4eacb3 !important}
+.badge-warning{background:#ec9a4b !important}
+.badge-info{background:#4eacb3  !important}
+.btn-light{background: #fff}
+.total_amount_tab{}
+.total_amount_tab .nav-tabs .nav-item.show .nav-link, .total_amount_tab  .nav-tabs .nav-link.active {
+    color: #3d5087;
+    background-color:inherit ;
+    border: 0 !important;
+    border-bottom: #3d5087 solid 3px !important;
+}
+.total_amount_tab .nav-tabs .nav-link:focus, .total_amount_tab  .nav-tabs .nav-link:hover {
+   color: #3d5087;
+    background-color:inherit !important;
+    border: 0 !important;
+    border-bottom: #3d5087 solid 3px !important;
+}
+.total_amount_tab a:hover, .total_amount_tab  a:active, .total_amount_tab  a:focus{color: #3d5087;
+    background-color: #fff;
+    border: 0 !important;
+    border-bottom: #3d5087 solid 3px !important;}

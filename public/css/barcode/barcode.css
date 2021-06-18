@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+@import url("/css/barcode/reset.css");
+
+@media screen {
+
+ #barcodes #barcode-print-instructions h1 {
+    font-size: 2em;
+    margin: 0 0 10px 0;
+ }
+
+  #barcodes #barcode-print-instructions h2 {
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+ }
+
+ #barcodes #barcode-print-instructions .browser_tip {
+    float: right;
+    width: 50%;
+    text-align: center;
+ }
+  /* START: BARCODES */
+
+ #barcodes #barcode-print-instructions {
+  width: 100%;
+  float: left;
+  border: 1px solid #aaa;
+  -webkit-box-shadow: 5px 5px 10px #444;
+  -moz-box-shadow: 5px 5px 10px #444;
+  box-shadow: 5px 5px 10px #444;
+  background: white;
+  padding: 10px;
+  margin: 0 0 20px 0;
+ }
+ #barcodes #barcode-list {
+  float: left;
+  margin: 0;
+  padding: 0;
+ }
+ .barcode-display {
+  margin: 20px 0;
+ }
+ #barcodes #barcode-list .barcode {
+  margin: auto;
+  overflow: hidden;
+ }
+ .barcode {
+  margin: 0;
+  text-align: center;
+  border: none;
+  background: white;
+  padding: 0 5%;
+ }
+ .barcode img {
+  margin: 5px auto 0;
+  width: auto;
+  max-width: 80%;
+ }
+ div.clearer {
+  height: 0px;
+  clear: both;
+  float: none;
+ }
+}
+
+.barcode .name {
+ text-align: center;
+ font-size: 1em;
+ padding: 3px 0;
+ line-height: 1.1em;
+ width: 100%;
+}
+
+.barcode .barcode-sku {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.barcode .price {
+ text-align: center;
+ font-size: 1.5em;
+ padding: 3px 0 3px 10px;
+}
+
+/*
+Additional element that can be used by barcode layouts to force a page break using :nth-child(). Remember to double the
+number of children as there's 2 elements for each barcode (a .barcode and a .page-break). For example, 30 to a page:
+
+.page-break:nth-child(60n + 60) {
+  display: block;
+  clear: left;
+  page-break-after: always;
+}
+*/
+.page-break {
+ display: none;
+}
+
+/* END: BARCODES */
