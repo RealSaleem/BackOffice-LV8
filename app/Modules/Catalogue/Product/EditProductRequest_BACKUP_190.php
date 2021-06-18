@@ -1,27 +1,28 @@
 <?php
 
 namespace App\Modules\Catalogue\Product;
-use App\Core\BaseRequest as BaseRequest;
-use App\Core\Response;
-use App\Models\Product;
-use App\Models\ProductImage;
-use App\Models\ProductCatgories;
-use App\Models\LanguageTranslation;
-use Auth;
 use DB;
-use App\Helpers\Language;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
-use App\Models\Store;
-use App\Models\ProductVariant;
-use App\Models\CompositeProduct;
-use App\Models\ProductStock;
-use App\Models\Outlet;
-use App\Models\SalesTax;
-
-use App\Helpers\OrderType as OrderType;
 use Session;
+use App\Models\Store;
+use App\Core\Response;
+use App\Models\Outlet;
+use App\Models\Product;
+use App\Models\SalesTax;
+use Milon\Barcode\DNS1D;
+use App\Helpers\Language;
+use App\Models\ProductImage;
+use App\Models\ProductStock;
 use App\Helpers\VariantStock;
+use App\Models\ProductVariant;
+use Illuminate\Validation\Rule;
+use App\Models\CompositeProduct;
+use App\Models\ProductCatgories;
+
+use App\Models\LanguageTranslation;
+use Illuminate\Support\Facades\Auth;
+use App\Helpers\OrderType as OrderType;
+use App\Core\BaseRequest as BaseRequest;
+use Illuminate\Support\Facades\Validator;
 
 class EditProductRequest extends BaseRequest
 {
@@ -509,7 +510,6 @@ class EditProductRequestHandler
                 }else{
                    $productStock = ProductStock::where([['outlet_id',$value['id']],['variant_id',$variants[0]['id']],['type',OrderType::In]])->first();
                 }
-<<<<<<< Updated upstream
 
               $outlet_id = $outlet;
            
@@ -534,34 +534,6 @@ class EditProductRequestHandler
                 $productStock->outlet_id         = $outlet_id;
                 if ($product->is_composite == 1) 
                 {
-=======
-                
-                if(!is_null($productStock)){
-                    
-
-                    $outlet_id = $outlet;
-                    
-                    // $productStock                    = new ProductStock();
-                    $productStock->invoice_date      = date('Y-m-d H:i:s');
-                    // $productStock->invoice_number    = $request->invoice_number;
-                    // $productStock->purchase_order    = $request->purchase_order;
-                    $productStock->cost_price        = $value['supply_price'];
-                    $productStock->sale_price        = $request->retail_price;
-                    $productStock->margin            = $this->calculateMargin($productStock->cost_price,$request->retail_price);
-                    // $productStock->notes             = $request->notes;
-                    $productStock->quantity          = $value['quantity'] < 0 ? 0 : $value['quantity'];
-                    $productStock->re_order_quantity = $value['re_order_quantity'];
-                    $productStock->re_order_point    = $value['re_order_point'];
-                    $productStock->product_id        = $product->id;
-                    
-                    $productStock->variant_id        = $variants[0]['id'];
-                    
-                    $productStock->updated             = Auth::user()->id;
-                    $productStock->updated_at              = date('Y-m-d H:i:s');
-                    $productStock->outlet_id         = $outlet_id;
-                    if ($product->is_composite == 1) 
-                    {
->>>>>>> Stashed changes
                     $productStock->type              = OrderType::CompositionIn;
                     }else{
                     $productStock->type              = OrderType::In;
@@ -572,16 +544,14 @@ class EditProductRequestHandler
                     
                     $productStock->save();
                 }
-<<<<<<< Updated upstream
+
                 $productStock->is_default        = 1;
 
                 $productStock->is_remove = false;
 
                 $productStock->save();
             }
-=======
->>>>>>> Stashed changes
-        }
+
     }
     private function  removeProductstock($product,$request,$variant)
     { 

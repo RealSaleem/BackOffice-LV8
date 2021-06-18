@@ -54,7 +54,7 @@
 			// Route::post('update-addon', 'AddonController@updateAddon')->name('api.update.addon');
 			// Route::post('update-variant', 'VariantController@updateVariant')->name('api.update.variant');
 			// Route::post('get-stockcontrol', 'StockControlController@getstockcontrol')->name('api.fetch.stockcontrol');
-		});
+		// });
 
 		// Route::post('store-image', 'ImageController@uploadStoreImage')->name('api.upload.store.image');
 		// Route::post('brand-image', 'ImageController@uploadBrandImage')->name('api.upload.brand.image');
@@ -72,7 +72,7 @@
 			// Route::post('update-customer', 'CustomerController@updateCustomer')->name('api.update.customer');
 			// Route::post('add-customergroup', 'CustomerGroupController@addCustomerGroup')->name('api.add.customergroup');
 			// Route::post('update-customergroup', 'CustomerGroupController@updateCustomerGroup')->name('api.update.customergroup');
-		});
+		// });
 
 		// Route::group(['namespace' => 'UserManagement'], function () {
             // Route::post('add-user', 'UsersController@adduser')->name('api.add.user');

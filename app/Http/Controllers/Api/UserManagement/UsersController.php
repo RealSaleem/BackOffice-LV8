@@ -11,7 +11,6 @@ use App\Requests\UserManagement\Users\AddUsersRequest;
 use App\Requests\UserManagement\Users\BulkUsersRequest;
 use App\Requests\UserManagement\Users\EditUsersRequest;
 use App\Requests\UserManagement\Users\DeleteUsersRequest;
-
 use App\Requests\UserManagement\Users\GetAllUsersRequest;
 use App\Requests\UserManagement\Users\ToggleUsersRequest;
 
@@ -22,7 +21,7 @@ class UsersController extends ApiController
 
     public function __construct(RequestExecutor $requestExecutor)
     {
-        // parent::__construct();
+        parent::__construct();
         $this->RequestExecutor = $requestExecutor;
     }
 
@@ -64,7 +63,6 @@ class UsersController extends ApiController
         $request->store_id = Auth::user()->store_id;
         $response = $this->RequestExecutor->execute($request);
         return response()->json($response);
-
     }
 
     public function bulkuser(BulkUsersRequest $request)
@@ -74,17 +72,10 @@ class UsersController extends ApiController
         return response()->json($response);
     }
 
-//--------When login user update their profile---------//
+    //--------When login user update their profile---------//
     public function save(EditProfileRequest $request)
     {
         $response = $this->RequestExecutor->execute($request);
         return response()->json($response);
     }
-
-
 }
-
-
-
-
-

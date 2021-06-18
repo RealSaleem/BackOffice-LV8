@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Api\Catalogue;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\ApiController;
 use App\Core\RequestExecutor;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Api\ApiController;
+use App\Requests\Catalogue\Category\AddCategoryRequest;
+use App\Requests\Catalogue\Category\BulkCategoryRequest;
+use App\Requests\Catalogue\Category\EditCategoryRequest;
+use App\Requests\Catalogue\Category\DeleteCategoryRequest;
 use App\Requests\Catalogue\Category\GetAllCategoryRequest;
 use App\Requests\Catalogue\Category\ToggleCategoryRequest;
-use App\Requests\Catalogue\Category\DeleteCategoryRequest;
-use App\Requests\Catalogue\Category\BulkCategoryRequest;
-use App\Requests\Catalogue\Category\AddCategoryRequest;
-use App\Requests\Catalogue\Category\EditCategoryRequest;
-use Auth;
 
 class CategoryController extends ApiController
 {
@@ -35,13 +35,15 @@ class CategoryController extends ApiController
         return response()->json($response);
     }
 
-    public function deleteCategory(DeleteCategoryRequest $request){
+    public function deleteCategory(DeleteCategoryRequest $request)
+    {
         $request->store_id = Auth::user()->store_id;
         $response = $this->RequestExecutor->execute($request);
         return response()->json($response);
     }
 
-    public function bulkCategory(BulkCategoryRequest $request){
+    public function bulkCategory(BulkCategoryRequest $request)
+    {
         $request->store_id = Auth::user()->store_id;
         $request->user = Auth::user();
         $response = $this->RequestExecutor->execute($request);
@@ -54,13 +56,12 @@ class CategoryController extends ApiController
 
         $category_request = new AddCategoryRequest();
 
-        foreach ($languages as $language)
-        {
-            $has_seo = 'has_seo_'.$language['short_name'];
-            $title   = 'title_'.$language['short_name'];
-            $meta_title = 'meta_title_'.$language['short_name'];
-            $meta_keywords = 'meta_keywords_'.$language['short_name'];
-            $meta_description = 'meta_description_'.$language['short_name'];
+        foreach ($languages as $language) {
+            $has_seo = 'has_seo_' . $language['short_name'];
+            $title   = 'title_' . $language['short_name'];
+            $meta_title = 'meta_title_' . $language['short_name'];
+            $meta_keywords = 'meta_keywords_' . $language['short_name'];
+            $meta_description = 'meta_description_' . $language['short_name'];
 
             $category_request->{$has_seo} = $request->{$has_seo};
             $category_request->{$title} = $request->{$title};
@@ -75,21 +76,21 @@ class CategoryController extends ApiController
         return response()->json($response);
     }
 
-    public function updateCategory(Request $request){
+    public function updateCategory(Request $request)
+    {
 
         $languages = Auth::user()->store->languages->toArray();
 
         $EditCategory = new EditCategoryRequest();
 
-        foreach ($languages as $language)
-        {
-            $has_seo = 'has_seo_'.$language['short_name'];
-            $title   = 'title_'.$language['short_name'];
-            $meta_title = 'meta_title_'.$language['short_name'];
-            $meta_keywords = 'meta_keywords_'.$language['short_name'];
-            $meta_description = 'meta_description_'.$language['short_name'];
+        foreach ($languages as $language) {
+            $has_seo = 'has_seo_' . $language['short_name'];
+            $title   = 'title_' . $language['short_name'];
+            $meta_title = 'meta_title_' . $language['short_name'];
+            $meta_keywords = 'meta_keywords_' . $language['short_name'];
+            $meta_description = 'meta_description_' . $language['short_name'];
 
-//            dd($params);
+            //            dd($params);
             $EditCategory->{$has_seo} = isset($request[$has_seo]) ? $request[$has_seo] : 0;
             $EditCategory->{$title} = $request[$title];
             $EditCategory->{$meta_title} = $request[$meta_title];

@@ -17,7 +17,7 @@ class AppsController extends Controller
 
     public function __construct(RequestExecutor $requestExecutor)
     {
-        // parent::__construct();
+        parent::__construct();
         $this->RequestExecutor = $requestExecutor;
     }
 
