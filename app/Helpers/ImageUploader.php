@@ -41,7 +41,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -76,7 +76,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -121,7 +121,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -157,7 +157,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -198,7 +198,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -242,7 +242,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;
@@ -280,7 +280,7 @@ class ImageUploader {
             $response = [
                 'name' => $file->getClientOriginalName(),
                 'path' => $base_url.'/uploads/'.$path,
-                'size' => $file->getClientSize(),
+                'size' => $file->getSize(),
             ];
 
             return $response;

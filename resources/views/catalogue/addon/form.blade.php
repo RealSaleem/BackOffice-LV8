@@ -153,7 +153,7 @@ $(function() {
                     if (response.IsValid) {
                         toastr.success(response.Message, 'Success');
                         setTimeout(() => {
-                            window.location.href = site_url('addon');
+                            window.location.href = site_url('catalogue/addon');
                         }, 100);
                     } else {
                         if (response.Errors.lenght > 0) {

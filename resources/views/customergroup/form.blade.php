@@ -80,7 +80,7 @@
                     if (response.IsValid) {
                       toastr.success(response.Message, 'Success');
                       setTimeout(() => {
-                        window.location.href = site_url('customergroup');
+                        window.location.href = site_url('customers/customergroup');
                       }, 1000);
                     } else {
                         if (Object.keys(response.Errors).length > 1) {

@@ -145,7 +145,7 @@
                                                 if (response.IsValid) {
                                                     toastr.success(response.Message, 'Success');
                                                     setTimeout(() => {
-                                                        window.location.href = site_url('profile');
+                                                        window.location.href = site_url('usermanagement/profile');
                                                     }, 3000);
                                                 } else {
                                                     if (response.Errors.lenght > 0) {

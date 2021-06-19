@@ -382,7 +382,7 @@
                             if (response.IsValid) {
                                 toastr.success(response.Message, 'Success');
                                 setTimeout(() => {
-                                    window.location.href = site_url('category');
+                                    window.location.href = site_url('catalogue/category');
                                 }, 3000);
                             } else {
                                 if (response.Errors.lenght > 0) {

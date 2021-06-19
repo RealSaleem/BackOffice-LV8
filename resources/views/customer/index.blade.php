@@ -204,7 +204,7 @@
                         data: 'actions', 'render': function (column, row, data, other) {
                             return `
                              @if( $permission::chekStatus('customer_edit','admin'))
-                            <a href='{{ url('customer/${data.id}/edit') }}' class="badge btn-primary">
+                            <a href='{{ url('customers/customer/${data.id}/edit') }}' class="badge btn-primary">
                                 {{ __('backoffice.edit') }}
                             </a>
                             @endif`;

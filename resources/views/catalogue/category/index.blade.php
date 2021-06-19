@@ -65,7 +65,8 @@
                                                     @endif
                                                     @if($has_website)
                                                         <option value="5">{{ __('backoffice.enable_website') }}</option>
-                                                        <option value="6">{{ __('backoffice.disable_website') }}</option>
+                                                        <option
+                                                            value="6">{{ __('backoffice.disable_website') }}</option>
                                                     @endif
                                                     <option value="7">{{ __('backoffice.activate') }}</option>
                                                     <option value="8">{{ __('backoffice.deactivate') }}</option>
@@ -81,7 +82,9 @@
                                     <table id="category-table" class="table table-striped display responsive nowrap">
                                         <thead>
                                         <tr>
-                                            <th style="width:5%"><div class="expend"></div></th>
+                                            <th style="width:5%">
+                                                <div class="expend"></div>
+                                            </th>
                                             <th style="width:10%">{{ __('backoffice.name') }} </th>
                                             <th style="width:10%">{{ __('backoffice.parent_category') }} </th>
                                             <th style="width:10%">{{ __('backoffice.sort_order') }} </th>
@@ -236,8 +239,8 @@
                         data: 'actions', sortable: false, render: function (column, row, data) {
                             return `
                  @if( $permission::chekStatus('product_type_edit','admin'))
-                            <a href="{{ url('category/${data.id}/edit') }}" class="badge btn-primary">
-                        {{ __('backoffice.edit') }}
+                            <a href="{{ url('catalogue/category/${data.id}/edit') }}" class="badge btn-primary">
+{{ __('backoffice.edit') }}
                             </a>
 @endif
                             @if( $permission::chekStatus('product_type_delete','admin'))
@@ -269,14 +272,14 @@
                     type: $(this).attr('method'),
                     data: $(this).serialize(),
                     success: function (response) {
-                        if (response.IsValid && response.Message ) {
+                        if (response.IsValid && response.Message) {
                             toastr.success(response.Message, 'Success');
                             $('#category_delete_modal').modal('hide');
                             categoryTable.ajax.reload();
-                        }else if(response.Message) {
+                        } else if (response.Message) {
                             $('#category_delete_modal').modal('hide');
                             toastr.error(response.Message, 'Error');
-                        }else {
+                        } else {
                             $('#category_delete_modal').modal('hide');
                             toastr.error(response.Errors[0], 'Error');
                         }
@@ -356,7 +359,7 @@
                         categoryTable.ajax.reload();
                         toastr.success(response.Message, 'Success');
                         $('#category-all').prop('checked', false).trigger('change');
-                    }else{
+                    } else {
                         toastr.error(response.Message, 'Error');
                         $('#category-all').prop('checked', false).trigger('change');
                     }

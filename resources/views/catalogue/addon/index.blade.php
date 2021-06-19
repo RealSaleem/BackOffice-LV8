@@ -154,7 +154,7 @@
                     { data: 'actions' , sortable : false , render : function(column,row,data){
                             return `
                    @if( $permission::chekStatus('addons_edit','admin'))
-                            <a href="{{ url('addon/${data.identifier}/edit') }}" class="badge btn-primary">
+                            <a href="{{ url('catalogue/addon/${data.identifier}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit_addon_title') }}
                             </a>
 @endif

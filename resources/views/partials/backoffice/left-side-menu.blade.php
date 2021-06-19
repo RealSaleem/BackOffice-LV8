@@ -39,7 +39,7 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
 					</span>
                     <ul class="nav">
 
-                  
+
                             <li>
                                 <a href="{{ route('backoffice.dashboard') }}" class="auto" title="Dashboard"><i
                                         class="icon-grid"></i> <span>@lang('backoffice.dashboard')</span>
@@ -48,7 +48,7 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                                 <!-- <a href="{{url('backoffice/dashboard')}}"></a> -->
 
                             </li>
-                   
+
 
                         @if($checkReport)
                         <li>
@@ -125,7 +125,7 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                                     @endif
                                     @if( $per::chekStatus('addons_list','admin'))
                                         <li>
-                                            <a href="{{url('addon')}}">
+                                            <a href="{{route('addon.index')}}">
                                                 {{--                                    <a href="{{route('addon.index')}}">--}}
                                                 <span>@lang('backoffice.add_addon')</span>
                                             </a>
@@ -211,7 +211,7 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{url('app-store')}}">
+                                    <a href="{{route('app-store')}}">
                                         <span>@lang('backoffice.app_store')</span>
                                     </a>
                                 </li>

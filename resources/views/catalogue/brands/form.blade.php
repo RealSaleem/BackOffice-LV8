@@ -325,7 +325,7 @@
                             if (response.IsValid) {
                                 toastr.success(response.Message, 'Success');
                                 setTimeout(() => {
-                                    window.location.href = site_url('brands');
+                                    window.location.href = site_url('catalogue/brands');
                                 }, 3000);
                             } else {
                                 if (response.Errors.lenght > 0) {

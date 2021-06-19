@@ -78,7 +78,7 @@ $(document).ready(function(){
                   if(data.name != 'admin'){
                     return `
                       @if( $permission::chekStatus('roles_edit','admin'))
-                        <a href="{{url('roles/edit/${data.id}') }}" class="badge btn-primary">
+                        <a href="{{url('usermanagement/roles/edit/${data.id}') }}" class="badge btn-primary">
                           {{ __('backoffice.edit') }}
                        </a>
                        @endif

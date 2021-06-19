@@ -170,7 +170,7 @@
                             if (response.IsValid) {
                                 toastr.success(response.Message, 'Success');
                                 setTimeout(() => {
-                                    window.location.href = site_url('supplier');
+                                    window.location.href = site_url('catalogue/supplier');
                                 }, 3000);
                             } else {
                                 if (Object.keys(response.Errors).length > 1) {

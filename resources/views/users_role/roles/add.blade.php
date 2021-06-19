@@ -510,6 +510,14 @@
                                                     <td></td>
                                                 </tr>
 
+
+
+
+
+
+
+
+
                                                 <tr>
                                                     <td> @lang('backoffice.outlets_and_registers')  </td>
                                                     <td>
@@ -713,6 +721,321 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
+                                                </tr>
+<!-----------------------------------------------Website Permissions Start-->
+                                                <tr>
+                                                    <td> @lang('backoffice.Ecommerce_Setup') </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck72" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="ecommerce_setup_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck72"> @lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.orders_management') </td>
+                                                    <td> <div class="custom-control custom-checkbox ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck85" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="order_web_management_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck85"> @lang('backoffice.list')</label>
+                                                        </div></td>
+                                                    <td></td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.WebSetting') </td>
+                                                    <td> <div class="custom-control custom-checkbox ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck97" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="web_settings_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck97"> @lang('backoffice.list')</label>
+                                                        </div></td>
+                                                    <td></td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.web_customer') </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck86" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="web_customer_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck86"> @lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.web_subscribe_users') </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck87" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="web_subscribe_user_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck87"> @lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.product_list')  </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck76" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="product_web_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck76">@lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck73" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="product_web_add">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck73">@lang('backoffice.add')</label>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck74" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="product_web_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck74">@lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck75" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="product_web_delete">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck75">@lang('backoffice.delete')</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td> @lang('backoffice.shipping_method')  </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck77" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="shipping_web_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck77">@lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck78" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="shipping_web_add">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck78">@lang('backoffice.add')</label>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck79" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="shipping_web_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck79">@lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck80" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="shipping_web_delete">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck80">@lang('backoffice.delete')</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.payment_gateways')  </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck81" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="payment_web_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck81">@lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck82" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="payment_web_add">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck82">@lang('backoffice.add')</label>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck83" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="payment_web_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck83">@lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck84" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="payment_web_delete">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck84">@lang('backoffice.delete')</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.banners')  </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck89" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="banner_web_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck89">@lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck90" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="banner_web_add">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck90">@lang('backoffice.add')</label>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck91" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="banner_web_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck91">@lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck92" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="banner_web_delete">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck92">@lang('backoffice.delete')</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td> @lang('backoffice.pages')  </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck93" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="pages_web_list">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck93">@lang('backoffice.list')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck94" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="pages_web_add">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck94">@lang('backoffice.add')</label>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck95" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="pages_web_edit">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck95">@lang('backoffice.edit')</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox col-sm-2 ">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck96" form="supplier-form"
+                                                                   name="permissions[]"
+                                                                   value="pages_web_delete">
+                                                            <label class="custom-control-label text-secondary"
+                                                                   for="customCheck96">@lang('backoffice.delete')</label>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
 
@@ -1033,302 +1356,6 @@
 
 
 
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.Ecommerce_Setup')
-
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="ecommerce_setup_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                    <hr>
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.product_list')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="product_web_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="product_web_add" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.add')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="product_web_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.edit')
-                                    </label>
-                                <!--label class="i-checks">
-                                                <input value="product_web_view" name="permissions[]" type="checkbox">
-                                                <i></i> @lang('backoffice.view')
-                                    </label> -->
-                                    <label class="i-checks">
-                                        <input value="product_web_delete" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.delete')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.shipping_method')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="shipping_web_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="shipping_web_add" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.add')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="shipping_web_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.edit')
-                                    </label>
-                                <!-- <label class="i-checks">
-                                                <input value="shipping_web_view" name="permissions[]" type="checkbox">
-                                                <i></i> @lang('backoffice.view')
-                                    </label> -->
-                                    <label class="i-checks">
-                                        <input value="shipping_web_delete" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.delete')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.payment_gateways')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="payment_web_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="payment_web_add" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.add')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="payment_web_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.edit')
-                                    </label>
-                                <!-- <label class="i-checks">
-                                                <input value="payment_web_view" name="permissions[]" type="checkbox">
-                                                <i></i> @lang('backoffice.view')
-                                    </label> -->
-                                    <label class="i-checks">
-                                        <input value="payment_web_delete" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.delete')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.orders_management')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="order_web_management_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.web_customer')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="web_customer_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.web_subscribe_users')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="web_subscribe_user_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                    <hr>
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.banners')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="banner_web_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="banner_web_add" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.add')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="banner_web_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.edit')
-                                    </label>
-                                <!-- <label class="i-checks">
-                                                <input value="banner_web_view" name="permissions[]" type="checkbox" >
-                                                <i></i> @lang('backoffice.view')
-                                    </label> -->
-                                    <label class="i-checks">
-                                        <input value="banner_web_delete" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.delete')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.pages')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="pages_web_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="pages_web_add" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.add')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="pages_web_edit" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.edit')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="pages_web_view" name="permissions[]" type="checkbox">
-                                        <i></i>@lang('backoffice.change_status')
-                                    </label>
-                                    <label class="i-checks">
-                                        <input value="pages_web_delete" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.delete')
-                                    </label>
-
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="padding-panel">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>
-                                    <i></i> @lang('backoffice.WebSetting')
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <p>
-                                    <label class="i-checks">
-                                        <input value="web_settings_list" name="permissions[]" type="checkbox">
-                                        <i></i> @lang('backoffice.list')
-                                    </label>
-                                </p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-
                     {{-- <div class="padding-panel">--}}
                     {{-- <div class="row">--}}
                     {{-- <div class="col-sm-4">--}}
@@ -1604,7 +1631,7 @@
                             if (response.IsValid) {
                                 toastr.success(response.Message, 'Success');
                                 setTimeout(() => {
-                                    window.location.href = site_url('roles');
+                                    window.location.href = site_url('usermanagement/roles');
                                 }, 1000);
                             } else {
                                 if (response.Errors.lenght > 0) {

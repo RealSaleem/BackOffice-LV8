@@ -172,7 +172,7 @@
                                     if (response.IsValid) {
                                         toastr.success(response.Message, 'Success');
                                         setTimeout(() => {
-                                            window.location.href = site_url('customer');
+                                            window.location.href = site_url('customers/customer');
 
                                         }, 3000);
                                     } else {

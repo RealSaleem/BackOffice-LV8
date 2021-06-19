@@ -12,7 +12,8 @@ use App\Requests\UserManagement\Roles\GetEmptyRoleRequest;
 use App\Models\Roles;
 use Auth;
 
-class RoleFormViewModel extends BaseViewModel{
+class RoleFormViewModel extends BaseViewModel
+{
 
     public $role = [];
 
@@ -23,30 +24,27 @@ class RoleFormViewModel extends BaseViewModel{
 
         $requestExecutor = new RequestExecutor();
 
-        if($id > 0){
-            $model->title = __('role.upd_role');
-            $model->button_title = __('role.update');
+        if ($id > 0) {
+            $model->title = __('backoffice.upd_role');
+            $model->button_title = __('backoffice.update');
             $model->route = route('api.update.roles');
             $request = new GetRoleByIdRequest();
             $request->id = $id;
             $response = $requestExecutor->execute($request);
             $model->role = $response->Payload;
-
-        }else{
-            $model->title = __('role.add_role');
-            $model->button_title = __('role.save');
+        } else {
+            $model->title = __('backoffice.add_role');
+            $model->button_title = __('backoffice.save');
             $model->route = route('api.add.roles');
 
             $request = new GetEmptyRoleRequest();
             $response = $requestExecutor->execute($request);
             $model->role = $response->Payload;
-
-
         }
 
         $model->edit_mode = ($id > 0);
 
 
-        return [ 'model' => $model ];
+        return ['model' => $model];
     }
 }

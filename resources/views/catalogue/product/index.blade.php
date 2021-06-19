@@ -345,7 +345,7 @@
                render: function(column, row, data) {
                   return `
                   @if( $permission::chekStatus('product_edit','admin'))
-                     <a href="{{ url('product/${data.id}/edit') }}" class="badge btn-primary">
+                     <a href="{{ url('catalogue/product/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                      </a>
                      @endif

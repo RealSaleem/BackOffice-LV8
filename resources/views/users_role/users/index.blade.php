@@ -188,7 +188,7 @@
                             if(data.role_name !='admin'){
                                 return `
                                   @if( $permission::chekStatus('user_edit','admin'))
-                                <a href="{{ url('users/${data.id}/edit') }}" class="badge btn-primary">
+                                <a href="{{ url('usermanagement/users/${data.id}/edit') }}" class="badge btn-primary">
                                     {{ __('backoffice.edit') }}
                                 </a>
                                 @endif

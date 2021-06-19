@@ -116,7 +116,7 @@
                             return `
                         @if( $permission::chekStatus('customer_group_edit','admin'))
 
-                            <a href="{{ url('customergroup/${data.id}/edit') }}" class="badge btn-primary">
+                            <a href="{{ url('customers/customergroup/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                             </a>
                             @endif

@@ -173,7 +173,7 @@
                             return `
                                 @if( $permission::chekStatus('brand_edit','admin'))
 
-                            <a href="{{ url('brands/${data.id}/edit') }}" class="badge btn-primary">
+                            <a href="{{ url('catalogue/brands/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                             </a>
 @endif
