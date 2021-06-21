@@ -67,7 +67,7 @@ class AddUsersRequestHandler
 
     public function Serve($request)
     {
-//        dd($request);
+//        dd($role,$request);
         try {
             DB::beginTransaction();
             $user = new User();
@@ -86,7 +86,9 @@ class AddUsersRequestHandler
             $user->save();
 
 
-            $user->roles()->attach($request->role);
+//            $user->roles()->attach($request->role);
+            $role = Role::find($request->role);
+            $user->assignRole($role->name);
 
 
             // step 2

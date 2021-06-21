@@ -25,12 +25,12 @@
 
                             <h1>
                                 {{ __('backoffice.categories') }}
-                                @if( $permission::chekStatus('product_type_add','admin'))
+                               @can('add-category')
                                     <a href="{{ route('category.create')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_category') }}
                                     </a>
-                                @endif
+                                @endcan
                             </h1>
 
                         </div>
@@ -183,12 +183,12 @@
                     {
                         data: 'pos', sortable: false, render: function (column, row, data) {
                             return `
-  @if( $permission::chekStatus('product_type_edit','admin'))
+   @can('edit-category')
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="pos-${data.id}" ${data.pos == 1 ? "checked" : ""} >
                      <label onclick="toggleCategory('pos',${data.id})" class="custom-control-label" for="pos-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                 @endcan
                             `;
                         }
                     },
@@ -197,12 +197,12 @@
                     {
                         data: 'website', sortable: false, render: function (column, row, data) {
                             return `
-  @if( $permission::chekStatus('product_type_edit','admin'))
+  @can('edit-category')
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="website-${data.id}" ${data.website == 1 ? "checked" : ""} >
                      <label onclick="toggleCategory('website',${data.id})" class="custom-control-label" for="website-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                @endcan
                             `;
                         }
                     },
@@ -212,12 +212,12 @@
                     {
                         data: 'dinein', sortable: false, render: function (column, row, data) {
                             return `
-  @if( $permission::chekStatus('product_type_edit','admin'))
+@can('edit-category')
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="dine-${data.id}" ${data.dinein == 1 ? "checked" : ""} >
                      <label onclick="toggleCategory('dinein',${data.id})" class="custom-control-label" for="dine-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+               @endcan
                             `;
                         }
                     },
@@ -226,28 +226,28 @@
                     {
                         data: 'active', sortable: false, render: function (column, row, data, other) {
                             return `
-  @if( $permission::chekStatus('product_type_edit','admin'))
+  @can('edit-category')
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${data.active == 1 ? "checked" : ""} >
                      <label onclick="toggleCategory('active',${data.id},${other.row})" class="custom-control-label" for="active-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                  @endcan
                             `;
                         }
                     },
                     {
                         data: 'actions', sortable: false, render: function (column, row, data) {
                             return `
-                 @if( $permission::chekStatus('product_type_edit','admin'))
+               @can('edit-category')
                             <a href="{{ url('catalogue/category/${data.id}/edit') }}" class="badge btn-primary">
 {{ __('backoffice.edit') }}
                             </a>
-@endif
-                            @if( $permission::chekStatus('product_type_delete','admin'))
+@endcan
+                            @can('delete-category')
                             <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteCategory" data-categoryid="${data.id}">
                         {{ __('backoffice.delete') }}
                             </button>
-@endif
+@endcan
                             `;
                         }
                     },

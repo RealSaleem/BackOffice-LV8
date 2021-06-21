@@ -7,11 +7,15 @@ use App\Core\BaseRequest as BaseRequest;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Core\Response;
-use App\Models\Role;
-use App\Models\Permission;
+//use App\Models\Role;
+//use App\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class AddRoleRequest extends BaseRequest
 {
@@ -45,22 +49,18 @@ class AddRoleRequestHandler
 
     public function Serve($request)
     {
+//        dd($request);
+
         try {
             DB::beginTransaction();
 
-            $role = new Role();
-            $role->display_name = $request->name;
-            $role->name = strtolower($request->name);
-            $role->store_id = $request->store_id;
+            $role                   = new Role();
+            $role->name             = strtolower($request->name);
+            $role->display_name     = $request->name;
+            $role->store_id         = Auth::user()->store_id;
             $role->save();
-
             if ($request->permissions !== null) {
-                foreach ($request->permissions as $value) {
-                    $permission = Permission::where('name', $value)->first();
-                    $role->permissions()->attach($permission);
-
-                    return new Response(true, $role, null, null, \Lang::get('toaster.role-permission_added'));
-                }
+                    $role->syncPermissions($request->permissions);
             }
 
             DB::commit();

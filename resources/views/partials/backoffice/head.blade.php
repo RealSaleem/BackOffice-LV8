@@ -23,8 +23,8 @@
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/intlTelInput.css')}}" rel="stylesheet">
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/toastr.css') }}"rel="stylesheet">
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/custom.css') }}"rel="stylesheet">
-    <link rel="stylesheet" href="{{ CustomUrl::asset('backoffice/assets/css/angular-material.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ CustomUrl::asset('backoffice/assets/css/amsify.suggestags.css') }}">
+    <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/angular-material.css') }}" rel="stylesheet">
+    <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/amsify.suggestags.css') }}" rel="stylesheet">
 
 
     <link rel="stylesheet" type="text/css" href="https://coreui.io/v1/demo/AngularJS_Demo/vendors/css/simple-line-icons.min.css">

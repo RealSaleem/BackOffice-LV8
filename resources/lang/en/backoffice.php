@@ -515,6 +515,7 @@ return [
     'terms_of_use'                          => 'Term of use',
     'privacy_policy'                        => 'Privacy policy',
     'agree_the'                             => 'Agree the',
+    'slug'                                  => 'Slug',
     'create_a_new_supplier.'                                     => 'Create a new supplier.',
     'contact_info'                                               => 'Contact Info',
     'addresses'                                                  => 'Addresses',

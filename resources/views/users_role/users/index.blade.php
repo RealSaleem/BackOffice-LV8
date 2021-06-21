@@ -21,12 +21,12 @@
                         <div class="common_title">
                             <h1 class="mb-2">
                                 {{ __('backoffice.user') }}
-                                @if( $permission::chekStatus('user_add','admin'))
+                                @can('add-user')
                                     <a href="{{ route('users.create')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_user') }}
                                     </a>
-                                @endif
+                                @endcan
                             </h1>
                         </div>
                     </div>
@@ -51,7 +51,8 @@
                                                                    for="users-all">&nbsp;</label>
                                                         </div>
                                                         <select class="custom-select" id="bulk-action">
-                                                            <option value="">{{ __('backoffice.bulk_actions') }}</option>
+                                                            <option
+                                                                value="">{{ __('backoffice.bulk_actions') }}</option>
                                                             <option value="1">{{ __('backoffice.activate') }}</option>
                                                             <option value="2">{{ __('backoffice.deactivate') }}</option>
                                                             <option value="3">{{ __('backoffice.delete') }}</option>
@@ -123,15 +124,15 @@
                         sortable: false,
                         'className': 'dt-body-center',
                         'render': function (column, row, data, other) {
-                            if(data.role_name !='admin'){
-                            return `
+                            if (data.role_name != 'admin') {
+                                return `
                                  <div class="expend"></div>
                                  <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input user-row" data-row="${other.row}" data-user-id="${data.id}" id="check-${data.id}">
                                     <label class="custom-control-label" for="check-${data.id}">&nbsp;</label>
                                  </div>
                                  `;
-                                 }else{
+                            } else {
                                 return ``;
                             }
 
@@ -164,43 +165,44 @@
                         }
                     },
 
-                    {data: 'mobile',sortable: true},
+                    {data: 'mobile', sortable: true},
                     {data: 'outlet', sortable: false},
                     {data: 'role', sortable: false},
                     {
                         data: 'active', sortable: false, render: function (column, row, data) {
-                            if(data.role_name !='admin'){
+                            if (data.role_name != 'admin') {
                                 return `${data.active == 1 ? "Active" : "In Active"}
-                                    @if( $permission::chekStatus('user_edit','admin'))
-                                                <div class="custom-control custom-switch center-align">
-                                                   <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${data.active == 1 ? "checked" : ""} >
+                                   @can('edit-user')
+                                <div class="custom-control custom-switch center-align">
+                                   <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${data.active == 1 ? "checked" : ""} >
                                          <label onclick="toggleuser('active',${data.id})" class="custom-control-label" for="active-${data.id}">&nbsp;</label>
                                       </div>
-                                      @endif
+                                      @endcan
                                 `;
-                            }else{
+                            } else {
                                 return `${data.active == 1 ? "Active" : "In Active"}`;
                             }
                         }
                     },
                     {
                         data: 'actions', sortable: false, render: function (column, row, data) {
-                            if(data.role_name !='admin'){
-                                return `
-                                  @if( $permission::chekStatus('user_edit','admin'))
-                                <a href="{{ url('usermanagement/users/${data.id}/edit') }}" class="badge btn-primary">
+                            // if(data.role_name !='admin'){
+                            return `
+                            @can('edit-user')
+                            <a href="{{ url('usermanagement/users/${data.id}/edit') }}" class="badge btn-primary">
                                     {{ __('backoffice.edit') }}
-                                </a>
-                                @endif
-                                @if( $permission::chekStatus('user_delete','admin'))
-                                <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteUser" data-userid="${data.id}">
+                            </a>
+                         @endcan
+                            @can('delete-user')
+                            <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteUser" data-userid="${data.id}">
                                     {{ __('backoffice.delete') }}
-                                </button>
-                                @endif
-                                 `;
-                            }else{
-                                return ``;
-                            }
+                            </button>
+                        @endcan
+
+                            `;
+                            // }else{
+                            //     return ``;
+                            // }
                         }
                     },
 

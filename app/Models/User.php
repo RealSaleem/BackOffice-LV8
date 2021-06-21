@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-//use Silber\Bouncer\Database\Concerns\HasRoles;
-//use Silber\Bouncer\Database\HasRolesAndAbilities;
-
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,14 +12,13 @@ use Illuminate\Notifications\Notifiable;
 use App\Notifications\PasswordReset;
 //use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
+
 use Auth;
 
 class User extends Authenticatable
 {
-    use HasRoles;
-//    use Notifiable;
-    use HasApiTokens;
+    use HasRoles ,Notifiable,HasApiTokens;
 
 //	 use HasRolesAndAbilities;
 
@@ -102,15 +98,15 @@ class User extends Authenticatable
 		return $this->hasMany('App\Models\UsersStore','user_id')->join('stores', 'userstores.store_id', '=', 'stores.id');
 	}
 
-    public function roles()
-    {
-        return $this->belongsToMany('App\Models\Role');
-    }
-
-    public function userRole()
-    {
-        return $this->hasMany('App\Models\UserRole');
-    }
+//    public function roles()
+//    {
+//        return $this->belongsToMany('App\Models\Role');
+//    }
+//
+//    public function userRole()
+//    {
+//        return $this->hasMany('App\Models\UserRole');
+//    }
 
 
 

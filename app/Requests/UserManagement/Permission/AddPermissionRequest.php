@@ -5,8 +5,9 @@ use App\Core\BaseRequest as BaseRequest;
 use App\Core\Response;
 use App\Models\Store;
 use App\Models\Entity;
-use App\Models\Permission;
+//use App\Models\Permission;
 use Auth;
+use Spatie\Permission\Models\Permission;
 
 // use Mail;
 // use App\Mail\NewCustomerGroupNotification;
@@ -19,6 +20,8 @@ class AddPermissionRequest extends BaseRequest{
     public $description;
     public $store_id;
     public $crud;
+    public $entity;
+    public $slug;
     // public $created_at;
 }
 
@@ -36,7 +39,7 @@ class AddPermissionRequestValidator {
 class AddPermissionRequestHandler {
     public function Serve($request){
 
-//        dd($request);
+
         $login_user = is_null(Auth::user())? \App::make('user') : Auth::user();
 
         $store = Store::where('id',$login_user->store_id)->first();
@@ -46,58 +49,29 @@ class AddPermissionRequestHandler {
         $Store_id  =  Auth::user()->store['id'];
 
 
-        $permission                         = new Permission();
-        $permission->name                   = $request->name;
-        $permission->display_name           = $permission->name;
-//        $permission->route                  = $request->route;
-        $permission->description            = $request->description;
-        $permission->group                  = $request->group;
-        $permission->group_display_name     = $permission->group;
-        $permission->save();
-//        dd($permission);
+//        $permission                         = new Permission();
+//        $permission->name                   = $request->name;
+//        $permission->display_name           = $permission->name;
+//        $permission->description            = $request->description;
+//        $permission->group                  = $request->group;
+//        $permission->group_display_name     = $permission->group;
+//        $permission->save();
 
+        try{
+            $permission                   = new Permission();
+            $permission->name             = strtolower($request->slug);
+            $permission->module           = $request->entity;
+            $permission->display_name     = $request->name;
+            $permission->save();
+            return new Response(true, $permission,null,null,\Lang::get('toaster.permission_added'));
+        }catch (\Exception $ex){
+            return new Response(false, null,null,$ex->getMessage());
 
-//        if($request->crud == 'on'){
-//            $crud= ['add'.$request->name, 'view'.$request->name,'update'.$request->name,'delete'.$request->name];
-//            $title= ['add','view','update','delete'];
-//            $permission = Permission::create([
-//                'name' => $crud,
-//                'title' => $title,
-//                'store_id' =>$Store_id,
-//                'entity' =>$entity_model->name,
-//            ]);
-//
-//        }else{
-//            $permission = Permission::create([
-//                'name' => $request->name,
-//                'title' => $request->title,
-//                'store_id' =>$Store_id,
-//                'entity' =>$entity_model->name,
-//            ]);
-
-
-//        }
+        }
 
 
 
 
 
-//        $newPer->name = $request->name;
-//        $newPer->title = $request->title;
-//        $newPer->entity_id = $request->entity;
-//        $newPer->entity_type = $entity_model->name;
-//        $newPer->description = $request->description;
-//        $newPer->store_id = $login_user->store_id;
-//
-//        $newPer->save();
-        // if ($newPer->save()) {
-        //     $email = new NewCustomerGroupNotification($newPer);
-        //     Mail::to($store->email)->send($email);
-
-        //     $emailAdmin = new NewCustomerGroupNotification($newPer);
-        //     Mail::to(env('MAIL_FROM_ADDRESS'))->send($emailAdmin);
-
-        // }
-        return new Response(true, $permission);
     }
 }

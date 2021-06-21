@@ -15,7 +15,7 @@ use DB;
 class PermissionFormViewModel extends BaseViewModel{
 
     public $permission = [];
-    
+
 
     public static function load($id = 0)
     {
@@ -24,23 +24,23 @@ class PermissionFormViewModel extends BaseViewModel{
         $requestExecutor = new RequestExecutor();
 
         if($id > 0){
-            $model->title = __('permission.edit_permission');
-            $model->button_title = __('permission.update');
+            $model->title = __('backoffice.edit_permission');
+            $model->button_title = __('backoffice.update');
             $model->route = route('api.update.permission');
             $request = new GetPermissionByIdRequest();
             $request->id = $id;
             $response = $requestExecutor->execute($request);
             $model->permission = $response->Payload;
         }else{
-            $model->title = __('permission.add_permission');
-            $model->button_title = __('permission.save');
+            $model->title = __('backoffice.add_role_perm');
+            $model->button_title = __('backoffice.save');
             $model->route = route('api.add.permission');
 
             $request = new GetEmptyPermissionRequest();
             $response = $requestExecutor->execute($request);
             $model->permission = $response->Payload;
         }
-        
+
         $entity = Entity::get();
         $model->edit_mode = ($id > 0);
         // $modelPermission= Permission::get();

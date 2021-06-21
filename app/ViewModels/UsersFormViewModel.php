@@ -8,8 +8,10 @@ use App\Requests\UserManagement\Users\GetUsersByIdRequest;
 use App\Requests\UserManagement\Users\GetEmptyUsersRequest;
 use App\Models\User;
 use App\Models\Outlet;
-use App\Models\Role;
+//use App\Models\Role;
 use Auth;
+use Spatie\Permission\Models\Role;
+
 
 class UsersFormViewModel extends BaseViewModel{
 

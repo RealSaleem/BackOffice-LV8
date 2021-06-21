@@ -24,7 +24,7 @@
 
                             <h1>
                                 {{ __('backoffice.brands') }}
-                                @if( $permission::chekStatus('brand_add','admin'))
+                                @can('add-brand')
                                     <a href="{{ route('brands.create')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_brand') }}
@@ -145,44 +145,46 @@
                     {
                         data: 'active', sortable: false, render: function (column, row, data) {
                             return `
-                                @if( $permission::chekStatus('brand_edit','admin'))
+                                @can('edit-brand')
 
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${data.active == 1 ? "checked" : ""} >
                      <label onclick="toggleBrands('active',${data.id})" class="custom-control-label" for="active-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                 @endcan
                             `;
                         }
                     },
                     {
                         data: 'feature', sortable: false, render: function (column, row, data) {
                             return `
-                                @if( $permission::chekStatus('brand_edit','admin'))
+                                @can('edit-brand')
 
                             <div class="custom-control custom-switch center-align">
                                <input type="checkbox" class="custom-control-input" id="feature-${data.id}" ${data.feature == 1 ? "checked" : ""} >
                      <label onclick="toggleBrands('feature',${data.id})" class="custom-control-label" for="feature-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                  @endcan
                             `;
                         }
                     },
                     {
                         data: 'actions', sortable: false, render: function (column, row, data) {
                             return `
-                                @if( $permission::chekStatus('brand_edit','admin'))
+                                                               @can('edit-brand')
+
 
                             <a href="{{ url('catalogue/brands/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                             </a>
-@endif
-                            @if( $permission::chekStatus('brand_delete','admin'))
+@endcan
+                            @can('delete-brand')
+
 
                             <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteBrands" data-brandsid="${data.id}">
                         {{ __('backoffice.delete') }}
                             </button>
-@endif
+@endcan
                             `;
                         }
                     },

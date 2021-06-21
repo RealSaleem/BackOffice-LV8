@@ -29,20 +29,19 @@ class PermissionController extends ApiController
     public function addPermission(AddPermissionRequest $request)
     {
         $response = $this->RequestExecutor->execute($request);
-        $response->Message = \Lang::get('permission.permission_added_successfully'); 
          return response()->json($response);
     }
     public function updatePermission(EditPermissionRequest $request)
     {
             $request->store_id = Auth::user()->store_id;
             $response = $this->RequestExecutor->execute($request);
-            $response->Message = \Lang::get('permission.permission_updated_successfully'); 
+            $response->Message = \Lang::get('permission.permission_updated_successfully');
             return response()->json($response);
         }
-    public function deletePermission(DeletePermissionRequest $request){ 
+    public function deletePermission(DeletePermissionRequest $request){
         $request->store_id = Auth::user()->store_id;
         $response = $this->RequestExecutor->execute($request);
-        $response->Message = \Lang::get('role.delete_success_message'); 
+        $response->Message = \Lang::get('role.delete_success_message');
         return response()->json($response);
     }
 }

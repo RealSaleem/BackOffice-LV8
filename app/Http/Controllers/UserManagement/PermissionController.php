@@ -9,14 +9,15 @@ class PermissionController extends Controller
 {
     public function index()
     {
-        return view('usermanagement.permission.index');
-        
+        return view('users_role.permissions.index');
+
     }
 
     public function create()
-    { 
+    {
         $data = PermissionFormViewModel::load(0);
-        return view('usermanagement.permission.form',$data);
+
+        return view('users_role.permissions.form',$data);
     }
 
     public function edit($id)

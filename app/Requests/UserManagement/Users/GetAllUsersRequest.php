@@ -56,8 +56,6 @@ class GetAllUsersRequestHandler
         $totalData = $userObj->count(); //
         $users = $userObj->offset($start)->limit($limit)->orderBy($order, $dir)->get();
         $users->transform(function ($user) {
-
-            $role = $user->roles->first();
             $getOutlet = $user->usr_outlets->pluck('name')->toArray();
 
             $data = [
@@ -68,7 +66,7 @@ class GetAllUsersRequestHandler
                 'outlet' => implode(", ", $getOutlet),
                 'email' => $user->email,
                 'active' => $user->active,
-                'role' => isset($role->display_name) ? $role->display_name : null,
+                'role' => isset($user) ? $user->getRoleNames() : null,
                 'role_name' => isset($role->name) ? $role->name : null,
                 'actions' => '',
             ];

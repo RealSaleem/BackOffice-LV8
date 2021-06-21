@@ -4,8 +4,11 @@ namespace App\Requests\UserManagement\Permission;
 
 use App\Core\BaseRequest as BaseRequest;
 use App\Core\DataTableResponse;
-use App\Models\Permission;
+//use App\Models\Permission;
 use App\Models\Abilities;
+
+use Spatie\Permission\Models\Permission;
+
 
 class GetAllPermissionRequest extends BaseRequest{
     // public $store_id;
@@ -19,10 +22,8 @@ class GetAllPermissionRequestHandler {
     public function Serve($request){
         $columns = [
             'name',
-            'display_name',
-            'group_display_name',
-
-
+            'slug',
+            'Module',
         ];
 
         $params = $request->all();
@@ -47,10 +48,9 @@ class GetAllPermissionRequestHandler {
         $permissions->transform(function($permission){
             $data = [
                 'id' => $permission->id,
-                'name' => $permission->name,
-                'display_name' => $permission->display_name,
-                'group_display_name' => $permission->group_display_name,
-
+                'name' => $permission->display_name,
+                'slug' => $permission->name,
+                'module' => $permission->module,
 
             ];
             return (object)$data;

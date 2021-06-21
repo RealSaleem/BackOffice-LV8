@@ -1,10 +1,5 @@
 @extends('layouts.backoffice')
 @section('content')
-    @php
-        $permission = '\App\Helpers\Helper';
-    @endphp
-    <!-- content -->
-
     @include('outlets.delete-modal')
 
     <div class="row">
@@ -16,18 +11,18 @@
                         <div class="common_title">
                             <h1>
                                 {{ __('backoffice.store') }}
-                                @if( $permission::chekStatus('general_setup_edit','admin'))
+                                @can('edit-store')
                                     <a href="{{ route('store.edit',$store->id)}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.edit_store') }}
                                     </a>
-                                @endif
-                                @if($permission::chekStatus('outlet_add','admin'))
+                                @endcan
+                                @can('add-outlet')
                                     <a href="{{ route('outlets.create') }}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_outlet') }}
                                     </a>
-                                @endif
+                                @endcan
                             </h1>
                         </div>
                     </div>
@@ -135,18 +130,18 @@
 
                     <h5 class="card-header">{{ $outlet->name }}
                         <span class="float-right">
-                       @if($permission::chekStatus('outlet_edit','admin'))
+                            @can('edit-outlet')
                                 <a href="{{ route('outlets.edit', $outlet->id) }}"
                                    class=" badge m-b-xs w-auto btn-primary btn-sm">
                         {{ __('backoffice.edit_outlets') }}
                      </a>
-                            @endif
-                            @if($permission::chekStatus('outlet_view','admin'))
+                            @endcan
+                            @can('list-outlet')
                                 <a href="{{ route('outlets.show', $outlet->id) }}"
                                    class="badge m-b-xs w-auto btn-primary btn-sm">
                         {{ __('backoffice.view_outlet') }}
                      </a>
-                            @endif
+                            @endcan
                </span>
                     </h5>
                     <div class="card-body">
@@ -236,5 +231,6 @@
 
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANRj-jLIgydGCb1M2dG7WjMsVVpC8xjjs&callback=myMap"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANRj-jLIgydGCb1M2dG7WjMsVVpC8xjjs&callback=myMap"></script>
 @endsection

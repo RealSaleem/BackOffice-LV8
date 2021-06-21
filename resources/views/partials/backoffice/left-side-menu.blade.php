@@ -1,18 +1,5 @@
 <div class="left_side_menu_1">
-@php
-    $per = '\App\Helpers\Helper';
 
-$checkCatalouge = $per::chekStatus('import_catalogue') != false || $per::chekStatus('product_type_list')!= false ||$per::chekStatus('brand_list')!= false  ||
-                  $per::chekStatus('product_list')!= false      || $per::chekStatus('addons_list')!= false       ||$per::chekStatus('supplier_list')!= false;
-
-$checkReport  =  $per::chekStatus('product_report') != false    || $per::chekStatus('product_export') != false   ||  $per::chekStatus('category_report') != false ||
-                 $per::chekStatus('category_export') != false   || $per::chekStatus('supplier_report') != false  || $per::chekStatus('supplier_export') != false ||
-                 $per::chekStatus('brand_report') != false      || $per::chekStatus('brand_export') != false     ||  $per::chekStatus('user_report') != false ||
-                 $per::chekStatus('reporting_sales_report') != false      || $per::chekStatus('reporting_inventory_report') != false     ||  $per::chekStatus('reporting_register_closure') != false ||
-                 $per::chekStatus('customer_report') != false      || $per::chekStatus('customer_group_report') != false     ||  $per::chekStatus('reporting_register_closure') != false ||
-                 $per::chekStatus('user_export') != false       || $per::chekStatus('addon_report') != false     || $per::chekStatus('addon_export') != false;
-
-@endphp
 
 <!-- aside -->
     <aside id="aside" class="app-aside hidden-xs bg-light border-right">
@@ -40,29 +27,33 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                     <ul class="nav">
 
 
+                        @can('view-dashboard')
                             <li>
                                 <a href="{{ route('backoffice.dashboard') }}" class="auto" title="Dashboard"><i
                                         class="icon-grid"></i> <span>@lang('backoffice.dashboard')</span>
                                 </a>
 
-                                <!-- <a href="{{url('backoffice/dashboard')}}"></a> -->
+                            <!-- <a href="{{url('backoffice/dashboard')}}"></a> -->
 
                             </li>
+                        @endcan
 
 
-                        @if($checkReport)
-                        <li>
-                            <a href="{{route('reports.index')}}" class="auto" title="Reports">
-                                <i class="fa fa-file-text-o"></i>
-                                <span>@lang('backoffice.reports')</span>
-                            </a>
-                            <!-- <ul class="nav nav-sub dk"> -->
+                            @canany(["product-report","category-report","supplier-report","brand-report","user-report","reporting_sales-report","reporting_inventory-report","register_closure-report",
+"customer-report","customer_group-report","addon-report","product-export","category-export","supplier-export","brand-export","user-export","reporting_sales-export",
+"addon-export"])
+                            <li>
+                                <a href="{{route('reports.index')}}" class="auto" title="Reports">
+                                    <i class="fa fa-file-text-o"></i>
+                                    <span>@lang('backoffice.reports')</span>
+                                </a>
+                                <!-- <ul class="nav nav-sub dk"> -->
                             <!-- <li>
                                     <a href="{{route('stockreport.index')}}">
                                         <span>Stock Report</span>
                                     </a>
                                 </li> -->
-                                <!-- <li>
+                            <!-- <li>
                                     <a href="{{route('reports.index')}}">
                                         <span>Reports</span>
                                     </a>
@@ -72,173 +63,170 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                                         <span>Customer Report</span>
                                     </a>
                                 </li> -->
-                            <!-- </ul> -->
-                        </li>
-                        @endif
+                                <!-- </ul> -->
+                            </li>
+                        @endcanany
 
 
 
 
-                        @if($checkCatalouge)
+                        @canany(["import-import catalogue" ,"list-category" , "list-brand" , "list-supplier" , "list-addons" , "list-product" , "list-addons"])
                             <li>
                                 <a href class="auto" title="Catalogue Management">
                                     <i class="icon-notebook"></i>
                                     <span>@lang('backoffice.catelouge_management')</span>
                                 </a>
                                 <ul class="nav nav-sub dk">
-                                    @if( $per::chekStatus('import_catalogue','admin'))
+
+                                    @can('import-import catalogue')
                                         <li>
                                             <a href="{{ route('import.products')}}">
                                                 <span>{{ __('backoffice.import_catalogue') }}</span>
                                             </a>
                                         </li>
-                                    @endif
+                                    @endcan
 
-                                    @if( $per::chekStatus('product_type_list','admin'))
+                                    @can('list-category')
 
                                         <li>
                                             <a href="{{route('category.index')}}">
                                                 <span>@lang('backoffice.category')</span>
                                             </a>
                                         </li>
-                                    @endif
-                                    @if( $per::chekStatus('brand_list','admin'))
+                                    @endcan
+                                    @can('list-brand')
+
                                         <li>
                                             <a href="{{route('brands.index')}}">
                                                 <span>@lang('backoffice.brand')</span>
                                             </a>
                                         </li>
-                                    @endif
-                                    @if( $per::chekStatus('product_list','admin'))
+                                    @endcan
+                                    @can('list-product')
                                         <li>
                                             <a href="{{route('product.index')}}">
                                                 <span>@lang('backoffice.products')</span>
                                             </a>
                                         </li>
-                                    @endif
-                                    @if( $per::chekStatus('supplier_list','admin'))
+                                    @endcan
+                                    @can('list-supplier')
                                         <li>
                                             <a href="{{route('supplier.index')}}">
                                                 <span>@lang('backoffice.supplier')</span>
                                             </a>
                                         </li>
-                                    @endif
-                                    @if( $per::chekStatus('addons_list','admin'))
+                                    @endcan
+                                    @can('list-addons')
                                         <li>
                                             <a href="{{route('addon.index')}}">
                                                 {{--                                    <a href="{{route('addon.index')}}">--}}
                                                 <span>@lang('backoffice.add_addon')</span>
                                             </a>
                                         </li>
-                                    @endif
+                                    @endcan
                                 </ul>
                             </li>
-                        @endif
+                        @endcanany
 
-                        </li>
-                        @if($per::chekStatus('customer_list') != false || $per::chekStatus('customer_group_list') != false)
+                        @canany(['list-customer','list-customergroup'])
                             <li>
                                 <a href class="auto" title="Customers">
                                     <i class="icon-people"></i>
                                     <span>@lang('backoffice.customer')</span>
                                 </a>
                                 <ul class="nav nav-sub dk">
-                                    @if( $per::chekStatus('customer_list','admin'))
+                                    @can('list-customer')
                                         <li>
                                             <a href="{{route('customer.index')}}">
                                                 <span>@lang('backoffice.customer')</span>
                                             </a>
                                         </li>
-                                    @endif
-                                    @if( $per::chekStatus('customer_group_list','admin'))
+                                    @endcan
+                                    @can('list-customergroup')
                                         <li>
                                             <a href="{{route('customergroup.index')}}">
                                                 <span>@lang('backoffice.customer_group')</span>
                                             </a>
                                         </li>
-                                    @endif
+                                    @endcan
                                 </ul>
                             </li>
-                        @endif
-                    <!-- <li>
-                            <a href class="auto" title="Customers">
-                                <i class="icon-trash"></i>
-                                <span>Subscription</span>
-                            </a>
-                        </li> -->
-                            @if($per::chekStatus('user_list') != false || $per::chekStatus('roles_list') != false)
-                        <li>
-                            <a href class="auto" title="Users">
-                                <i class="icon-user-following"></i>
-                                <span>@lang('backoffice.user_management')</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                @if( $per::chekStatus('user_list','admin'))
+                        @endcanany
+
+                        @canany(['list-user','list-role','list-permission'])
+                            <li>
+                                <a href class="auto" title="Users">
+                                    <i class="icon-user-following"></i>
+                                    <span>@lang('backoffice.user_management')</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    {{--                                @if( $per::chekStatus('user_list','admin'))--}}
 
                                     <li>
                                         <a href="{{route('users.index')}}">
                                             <span>@lang('backoffice.user')</span>
                                         </a>
                                     </li>
-                                @endif
-                                @if( $per::chekStatus('roles_list','admin'))
+                                    {{--                                @endif--}}
+                                    {{--                                @if( $per::chekStatus('roles_list','admin'))--}}
 
                                     <li>
                                         <a href="{{route('roles.index')}}">
                                             <span>@lang('backoffice.role_permissions')</span>
                                         </a>
                                     </li>
-                                @endif
+                                    {{--                                @endif--}}
 
-                                {{--								<li>--}}
-                                {{--									<a href="{{route('permission.index')}}">--}}
-                                {{--										<span>Permission</span>--}}
-                                {{--									</a>--}}
-                                {{--								</li>--}}
-                            </ul>
-                        </li>
-                            @endif
-                            @if($per::chekStatus('apps_view') != false )
-                        <li>
-                            <a href="" class="auto" title="Apps">
-                                <i class="icon-layers"></i>
-                                <span>@lang('backoffice.apps')</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li>
-                                    <a href="{{route('apps.index')}}">
-                                        <span>@lang('backoffice.your_apps')</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('app-store')}}">
-                                        <span>@lang('backoffice.app_store')</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                            @endif
-                            @if($per::chekStatus('plugin_view') != false )
-                        <li>
-                            <a href="" class="auto" title="Plugins">
-                                <i class="icon-puzzle"></i>
-                                <span>Plugins</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li>
-                                    <a href="{{route('plugins.index')}}">
-                                        <span>Your Plugins</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{url('plugin-store')}}">
-                                        <span>Plugin Store</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                            @endif
-                        <!-- <li>
+                                    <li>
+                                        <a href="{{route('permission.index')}}">
+                                            <span>Permission</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endcanany
+
+                        @can('list-app')
+                            <li>
+                                <a href="" class="auto" title="Apps">
+                                    <i class="icon-layers"></i>
+                                    <span>@lang('backoffice.apps')</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    <li>
+                                        <a href="{{route('apps.index')}}">
+                                            <span>@lang('backoffice.your_apps')</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('app-store')}}">
+                                            <span>@lang('backoffice.app_store')</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endcan
+                        @can('list-plugin')
+                            <li>
+                                <a href="" class="auto" title="Plugins">
+                                    <i class="icon-puzzle"></i>
+                                    <span>Plugins</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    <li>
+                                        <a href="{{route('plugins.index')}}">
+                                            <span>Your Plugins</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('plugin-store')}}">
+                                            <span>Plugin Store</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endcan
+                    <!-- <li>
                             <a href="#" class="auto" title="Reporting">
                                 <i class="icon-notebook"></i>
                                 <span>Reporting </span>
@@ -271,23 +259,19 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
         </div>
 
 
-
-
-
-
-
-
         <div class="bottomMenu">
             <ul>
                 <li class="">
-{{--                    @dd($per::chekStatus('ecommerce_setup_edit','admin'))--}}
-                    @if( $per::chekStatus('general_setup_edit','admin') || $per::chekStatus('outlet_list','admin'))
-                    <a href="{{ route('outlets.index') }}" aria-haspopup="true" aria-expanded="false" title="Setup">
-                        <i class="icon-settings color2"></i>
-                        <span>Setup</span>
-                    </a>
-                    @endif
-                    <!-- <div class="dropdown-menu">
+                    {{--                    @dd($per::chekStatus('ecommerce_setup_edit','admin'))--}}
+
+                        @canany(['edit-store','list-outlet'])
+                        <a href="{{ route('outlets.index') }}" aria-haspopup="true" aria-expanded="false" title="Setup">
+                            <i class="icon-settings color2"></i>
+                            <span>Setup</span>
+                        </a>
+                            @endcanany
+
+                <!-- <div class="dropdown-menu">
                         <ul>
                             <li><a href="">Languages</a></li>
                             <li><a href="">Settings</a></li>
@@ -302,6 +286,7 @@ $checkReport  =  $per::chekStatus('product_report') != false    || $per::chekSta
                     </a>
                 </li> -->
                 <li>
+
                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Profile">
                         <i class="icon-user color1"></i>
                         <span>Profile</span>

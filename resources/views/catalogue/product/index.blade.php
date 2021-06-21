@@ -18,16 +18,16 @@
 
                   </h1>
                   <div class="filter-icons ">
-                      @if( $permission::chekStatus('product_add','admin'))
+                      @can('add-product')
                      <a href="{{ route('product.create')}}" class="m-b-xs w-auto btn-primary btn-sm pull-right">
                         {{ __('backoffice.add_item') }}
                      </a>
-                      @endif
-                          @if( $permission::chekStatus('import_catalogue','admin'))
+                     @endcan
+                          @can('import-import catalogue')
                      <a href="{{ route('import.products')}}" class="m-b-xs w-auto btn-primary btn-sm pull-right">
                         {{ __('backoffice.import_product') }}
                      </a>
-                          @endif
+                          @endcan
                      <a href="javascript:;" class="text-primary btn-link btn-lg pull-right d-inline-block d-md-none d-lg-none pt-0 pr-2">
                         <i class="fa fa-filter"></i>
                      </a>
@@ -96,7 +96,7 @@
                      </div>
                      <hr>
                      <div class=" table-responsive table-responsive2">
-                         @if( $permission::chekStatus('product_edit','admin'))
+                         @can('edit-product')
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
                            <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -129,7 +129,7 @@
                               <button type="button" class="btn btn-primary btn-xs btn-bulk ml-3" id="bulk-apply">Apply</button>
                            </div>
                         </div>
-                         @endif
+                         @endcan
                         <hr />
                         <table class="table table-striped" id="product-table">
                            <thead>
@@ -285,12 +285,12 @@
                sortable: false,
                render: function(column, row, data) {
                   return `
-@if( $permission::chekStatus('product_edit','admin'))
+  @can('edit-product')
                   <div class="custom-control custom-switch center-align">
                      <input type="checkbox" class="custom-control-input" id="is_featured-${data.id}" ${ data.pos == 1 ? "checked" : "" } >
                      <label onclick="toggleProduct('is_featured',${data.id})" class="custom-control-label" for="is_featured-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                 @endcan
                   `;
                }
             },
@@ -301,12 +301,12 @@
                sortable: false,
                render: function(column, row, data) {
                   return `
- @if( $permission::chekStatus('product_edit','admin'))
+   @can('edit-product')
                   <div class="custom-control custom-switch center-align">
                      <input type="checkbox" class="custom-control-input" id="website-${data.id}" ${ data.website == 1 ? "checked" : "" } >
                      <label onclick="toggleProduct('website',${data.id})" class="custom-control-label" for="website-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                  @endcan
                   `;
                }
             },
@@ -316,12 +316,12 @@
                data: 'dinein',
                render: function(column, row, data) {
                   return `
-@if( $permission::chekStatus('product_edit','admin'))
+  @can('edit-product')
                   <div class="custom-control custom-switch center-align">
                      <input type="checkbox" class="custom-control-input" id="dine-${data.id}" ${ data.dinein == 1 ? "checked" : "" } >
                      <label onclick="toggleProduct('dinein',${data.id})" class="custom-control-label" for="dine-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                 @endcan
                   `;
                }
             },
@@ -330,12 +330,12 @@
                sortable: false,
                render: function(column, row, data, other) {
                   return `
-@if( $permission::chekStatus('product_edit','admin'))
+  @can('edit-product')
                   <div class="custom-control custom-switch center-align">
                      <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${ data.active == 1 ? "checked" : "" } >
                      <label onclick="toggleProduct('active',${data.id},${other.row})" class="custom-control-label" for="active-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                 @endcan
                   `;
                }
             },
@@ -344,16 +344,16 @@
                sortable: false,
                render: function(column, row, data) {
                   return `
-                  @if( $permission::chekStatus('product_edit','admin'))
+                  @can('edit-product')
                      <a href="{{ url('catalogue/product/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                      </a>
-                     @endif
-                  @if( $permission::chekStatus('product_delete','admin'))
+                     @endcan
+                  @can('delete-product')
                      <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteproduct" data-productid="${data.id}">
                         {{ __('backoffice.delete') }}
                      </button>
-                     @endif
+                     @endcan
                   `;
                }
             },

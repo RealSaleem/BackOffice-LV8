@@ -1,5 +1,6 @@
 @extends('layouts.backoffice')
 @section('content')
+{{--    @dd(Auth::user()->getAllPermissions())--}}
 
     <div class="row">
         <div class="col-sm-12">

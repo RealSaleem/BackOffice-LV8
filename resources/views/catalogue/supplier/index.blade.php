@@ -24,12 +24,12 @@
 
                             <h1>
                                 {{ __('backoffice.suppliers') }}
-                                @if( $permission::chekStatus('supplier_add','admin'))
+                            @can('add-supplier')
                                     <a href="{{ route('supplier.create')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_supplier') }}
                                     </a>
-                                @endif
+                                @endcan
                             </h1>
 
                         </div>
@@ -132,30 +132,30 @@
                     {
                         data: 'active', render: function (column, row, data) {
                             return `
-                             @if( $permission::chekStatus('supplier_edit','admin'))
+                           @can('edit-supplier')
 
                   <div class="custom-control custom-switch center-align">
                      <input type="checkbox" class="custom-control-input" id="active-${data.id}" ${data.active == 1 ? "checked" : ""} >
                      <label onclick="toggleSupplier('active',${data.id})" class="custom-control-label" for="active-${data.id}">&nbsp;</label>
                   </div>
-                  @endif
+                @endcan
                   `;
                         }
                     },
                     {
                         data: 'actions', sortable: false, render: function (column, row, data) {
                             return `
-                             @if( $permission::chekStatus('supplier_edit','admin'))
+                            @can('edit-supplier')
 
                             <a href="{{ url('catalogue/supplier/${data.id}/edit') }}" class="badge btn-primary">
                         {{ __('backoffice.edit') }}
                             </a>
-                            @endif
-                            @if( $permission::chekStatus('supplier_delete','admin'))
+                            @endcan
+                            @can('delete-supplier')
                             <button type="button" onclick="openDeleteModal(${data.id})" class="badge btn-primary deleteSupplier" data-supplierid="${data.id}">
                         {{ __('backoffice.delete') }}
                             </button>
-                            @endif
+                             @endcan
 `;
                         }
                     },

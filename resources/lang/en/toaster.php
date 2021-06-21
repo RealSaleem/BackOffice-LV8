@@ -37,6 +37,9 @@ return [
     'role_deleted'                          => 'Role has been deleted successfully',
     'role_user_exist'                       => 'User Exist,Cant not delete assigned Role',
 
+    'permission_added'                      => 'Permission have been added successfully',
+
+
 
 //------------------------------------------------------USER
     'user_added'                            => 'User have been added successfully',

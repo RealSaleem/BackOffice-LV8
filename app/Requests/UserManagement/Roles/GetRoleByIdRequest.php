@@ -6,7 +6,8 @@ use App\Core\BaseRequest as BaseRequest;
 use App\Core\Response;
 use App\Models\Permission;
 use App\Models\Permission_role;
-use App\Models\Role;
+//use App\Models\Role;
+use Spatie\Permission\Models\Role;
 use App\Models\Store;
 use Auth;
 

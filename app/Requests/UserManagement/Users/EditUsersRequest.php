@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use App\Models\User;
 use App\Models\Outlet;
-use App\Models\Role;
+//use App\Models\Role;
+use Spatie\Permission\Models\Role;
+
 use Auth;
 use App\Models\UserImage;
-use Silber\Bouncer\Database\Queries\Roles;
+//use Silber\Bouncer\Database\Queries\Roles;
 
 class EditUsersRequest extends BaseRequest
 {
@@ -91,7 +93,10 @@ class EditUsersRequestHandler
             $editUser->save();
 
             $editUser->roles()->detach();
-            $editUser->roles()->attach($request->role);
+//            $editUser->roles()->attach($request->role);
+            $role = Role::find($request->role);
+//            dd($role);
+            $editUser->assignRole($role);
 
 
             // step 2

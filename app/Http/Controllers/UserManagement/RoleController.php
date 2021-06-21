@@ -4,8 +4,9 @@ namespace App\Http\Controllers\UserManagement;
 use App\Http\Controllers\Controller;
 use App\Core\RequestExecutor;
 use App\ViewModels\RoleFormViewModel;
-use App\Models\Permission;
+//use App\Models\Permission;
 use App\Models\Entity;
+use Spatie\Permission\Models\Permission;
 use App\Models\Role;
 use Auth;
 use App\Requests\UserManagement\Roles\GetAllPermissionsRequest;
@@ -27,18 +28,20 @@ class RoleController extends Controller
     public function create()
     {
         $data = RoleFormViewModel::load(0);
-        $entityModule = Entity::get();
-        $permissions =  Permission::get();
-
-
-        return view('users_role.roles.add',$data)->with(compact('entityModule','permissions'));
+        $permissions =  Permission::all()->groupBy('module');
+        $reports =  Permission::where('module','Report')->orWhere('module', 'Export')->get()->groupBy('module');
+        return view('users_role.roles.form',$data)->with(compact('permissions','reports'));
     }
 
 
     public function edit($id)
     {
         $data = RoleFormViewModel::load($id);
-        return view('users_role.roles.edit')->with(compact('data'));
+//        return view('users_role.roles.form')->with(compact('data'));
+        $entityModule = Entity::get();
+        $permissions =  Permission::all()->groupBy('module');
+        $reports =  Permission::where('module','Report')->orWhere('module', 'Export')->get()->groupBy('module');
+        return view('users_role.roles.form',$data)->with(compact('permissions','reports'));
     }
 
     public function assign_permission($id)

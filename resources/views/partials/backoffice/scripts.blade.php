@@ -24,6 +24,9 @@
 
 <script type="text/javascript">
 
+
+
+
 const $loading = $('#LoaderDiv').hide();
 
 $(document).ajaxStart(function() {

@@ -13,13 +13,13 @@
           <div class="common_title">
             <h1>
                {{ __('backoffice.roles') }}
-{{--                @can('edit')--}}
-                @if( $permission::chekStatus('roles_add','admin'))
+
+
                <a href="{{ route('roles.create')}}"class="m-b-xs w-auto btn-primary btn-sm pull-right">
                   {{ __('backoffice.add_role') }}
-{{--                @endcan--}}
+
               </a>
-                    @endif
+
             </h1>
           </div>
             </div>
@@ -37,6 +37,7 @@
                            <thead>
                               <tr>
                                   <!-- <th>{{ __('backoffice.name') }} </th> -->
+                                 <th>{{ __('backoffice.name') }} </th>
                                  <th>{{ __('backoffice.title') }} </th>
 
                                  <th>{{ __('backoffice.action') }} </th>
@@ -71,17 +72,17 @@ $(document).ready(function(){
             },
             "columns": [
                // { data: 'id' },
-                // { data: 'name' },
+                { data: 'name' },
                { data: 'display_name' },
                 // { data: 'description' },
                { data: 'actions' , sortable : false , render : function(column,row,data){
                   if(data.name != 'admin'){
                     return `
-                      @if( $permission::chekStatus('roles_edit','admin'))
+
                         <a href="{{url('usermanagement/roles/edit/${data.id}') }}" class="badge btn-primary">
                           {{ __('backoffice.edit') }}
                        </a>
-                       @endif
+
                          @if( $permission::chekStatus('roles_delete','admin'))
                        <button onclick="openDeleteModal(${data.id})" class="badge btn-primary">
                           {{ __('backoffice.delete') }}

@@ -5,14 +5,16 @@ use App\Core\BaseRequest as BaseRequest;
 use App\Core\Response;
 use App\Models\Permission;
 use App\Models\Permission_role;
-use App\Models\Role;
+//use App\Models\Role;
+use Spatie\Permission\Models\Role;
+
 use App\Models\UsersStore;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EditRoleRequest extends BaseRequest{
 
-    public $role_name;
+    public $name;
     public $level;
     public $scope;
     public $permissions;
@@ -24,8 +26,8 @@ class EditRoleRequest extends BaseRequest{
 class EditRoleRequestValidator{
     public function GetRules(){
         return [
-//            'name'          => 'required|string|max:225',
-            'display_name'  => 'required|string|max:10',
+            'name'          => 'required|string|max:225',
+//            'display_name'  => 'required|string|max:10',
 //            'description'   => 'required|string|max:11',
         ];
     }
@@ -43,17 +45,21 @@ class EditRoleRequestHandler {
 
             DB::beginTransaction();
             $role = Role::find($request->id);
-            $role->display_name = $request->display_name;
+            $role->name             = strtolower($request->name);
+            $role->display_name     = $request->name;
             $role->save();
 
             if(strtolower($role->name) != 'admin'){
-                $role->permissions()->detach();
                 if ($request->permissions !== null) {
-                    foreach ($request->permissions as $value) {
-                        $permission = Permission::where('name', '=', $value)->first();
-                        $role->permissions()->attach($permission);
-                    }
+                    $role->syncPermissions($request->permissions);
                 }
+//                $role->permissions()->detach();
+//                if ($request->permissions !== null) {
+//                    foreach ($request->permissions as $value) {
+//                        $permission = Permission::where('name', '=', $value)->first();
+//                        $role->permissions()->attach($permission);
+//                    }
+//                }
             }
 
             DB::commit();
