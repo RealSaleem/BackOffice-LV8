@@ -53,7 +53,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between ">
                                 <span>{{ __('backoffice.role') }}</span>
-                                <span>{{$user['role']->display_name  }}</span>
+                                <span>{{$user['role']  }}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between ">
                                 <span>{{ __('backoffice.outlet') }}</span>

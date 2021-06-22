@@ -22,6 +22,10 @@ class AddOnController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-addons'])->only('getAddOn');
+        $this->middleware(['permission:add-addons'])->only('addAddOn');
+        $this->middleware(['permission:edit-addons'])->only('updateAddOn');
+        $this->middleware(['permission:delete-addons'])->only('deleteAddon');
     }
 
     public function getAddOn(GetAllAddOnRequest $request)

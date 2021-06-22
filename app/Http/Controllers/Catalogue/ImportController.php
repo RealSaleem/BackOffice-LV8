@@ -37,6 +37,8 @@ class ImportController extends Controller
     {
         // parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:import-import catalogue'])->only('index1','import','export');
+
     }
 
     public function index()

@@ -12,7 +12,11 @@ class CustomerController extends Controller
 
     public function __construct()
     {
-        // parent::__construct();
+         parent::__construct();
+        $this->middleware(['permission:list-customer'])->only('index');
+        $this->middleware(['permission:add-customer'])->only('create');
+        $this->middleware(['permission:edit-customer'])->only('edit');
+
     }
 
     public function index()

@@ -76,7 +76,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth', 'has_store']], function () {
 
     Route::get('/',                              [DashboardController::class, 'index']);
-    Route::get('/home',                          [DashboardController::class, 'index']);
+    Route::get('/home',                          [DashboardController::class, 'index'])->name('backoffice.home');
     Route::get('dashboard',                      [DashboardController::class, 'index'])->name('backoffice.dashboard');
     Route::post('dashboard/kpis',                [DashboardController::class, 'getKpiData'])->name('backoffice.dashboard.kpis');
     Route::post('orders-list',                   [DashboardController::class, 'getOrders'])->name('backoffice.order.list');

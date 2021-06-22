@@ -176,12 +176,13 @@
                                         </a>
                                     </li>
                                     {{--                                @endif--}}
-
+                                    @role('admin')
                                     <li>
                                         <a href="{{route('permission.index')}}">
                                             <span>Permission</span>
                                         </a>
                                     </li>
+                                    @endrole
                                 </ul>
                             </li>
                         @endcanany

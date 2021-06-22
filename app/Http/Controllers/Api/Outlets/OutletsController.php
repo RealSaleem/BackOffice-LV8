@@ -17,8 +17,11 @@ class OutletsController extends ApiController
 
     public function __construct(RequestExecutor $requestExecutor)
     {
-        // parent::__construct();
+         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-outlet'])->only('getOutlets','show');
+        $this->middleware(['permission:add-outlet'])->only('addOutlets');
+        $this->middleware(['permission:edit-outlet'])->only('updateOutlets');
     }
 
     public function getOutlets(GetAllOutletsRequest $request)

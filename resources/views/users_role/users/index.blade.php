@@ -163,6 +163,7 @@
                         data: 'name', render: function (column, row, data) {
                             return `<p class="tb_name">${data.name}</p><p class="tb_name">${data.email}</p>`;
                         }
+
                     },
 
                     {data: 'mobile', sortable: true},
@@ -186,7 +187,7 @@
                     },
                     {
                         data: 'actions', sortable: false, render: function (column, row, data) {
-                            // if(data.role_name !='admin'){
+                         if(data.role_name !='admin'){
                             return `
                             @can('edit-user')
                             <a href="{{ url('usermanagement/users/${data.id}/edit') }}" class="badge btn-primary">
@@ -200,9 +201,9 @@
                         @endcan
 
                             `;
-                            // }else{
-                            //     return ``;
-                            // }
+                            }else{
+                                return ``;
+                            }
                         }
                     },
 

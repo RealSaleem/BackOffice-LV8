@@ -19,6 +19,7 @@ class AppsController extends Controller
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-app'])->only('index','app_Store','appPurchase');
     }
 
    public function index(Request $request)

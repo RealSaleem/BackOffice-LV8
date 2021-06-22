@@ -72,6 +72,7 @@ class EditUsersRequestHandler
     public function Serve($request)
     {
 
+
         $editUser = User::where([['id',$request->id],['store_id',$request->store_id]])->first();
         if($editUser != null ){
             $editUser->name = $request->name;

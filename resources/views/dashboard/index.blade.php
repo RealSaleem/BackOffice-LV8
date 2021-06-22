@@ -18,6 +18,13 @@
                     </div>
                 </div>
             </div>
+            @if (\Session::has('errors'))
+                <div class="alert alert-danger danger" style="margin: 15px 54px;">
+
+                        <span>{!! \Session::get('errors') !!}</span>
+
+                </div>
+            @endif
 
             <div class="card bg-light mt-3 pl-3 pr-3  rounded  border-0">
                 <div class="row">
@@ -531,6 +538,7 @@
             containerClass: "new-structure"
         });
     }
+    setTimeout(function() { $('.danger').alert('close'); }, 5000);
 
 </script>
 

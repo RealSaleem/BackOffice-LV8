@@ -23,6 +23,10 @@ class UsersController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-user'])->only('getuser');
+        $this->middleware(['permission:add-user'])->only('adduser');
+        $this->middleware(['permission:edit-user'])->only('updateuser');
+        $this->middleware(['permission:delete-user'])->only('deleteuser');
     }
 
 

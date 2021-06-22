@@ -67,7 +67,7 @@ class GetAllUsersRequestHandler
                 'email' => $user->email,
                 'active' => $user->active,
                 'role' => isset($user) ? $user->getRoleNames() : null,
-                'role_name' => isset($role->name) ? $role->name : null,
+                'role_name' => isset($user) ? $user->getRoleNames() : null,
                 'actions' => '',
             ];
 

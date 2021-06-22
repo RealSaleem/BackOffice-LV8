@@ -21,6 +21,9 @@ CustomerController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-customer'])->only('getCustomers');
+        $this->middleware(['permission:add-customer'])->only('addCustomer');
+        $this->middleware(['permission:edit-customer'])->only('updateCustomer');
     }
 
     public function getCustomers(GetAllCustomerRequest $request)

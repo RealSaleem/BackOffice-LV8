@@ -11,6 +11,9 @@ class CustomerGroupController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->middleware(['permission:list-customergroup'])->only('index');
+        $this->middleware(['permission:add-customergroup'])->only('create');
+        $this->middleware(['permission:edit-customergroup'])->only('edit');
     }
 
     public function index()
@@ -19,9 +22,9 @@ class CustomerGroupController extends Controller
     }
 
     public function create()
-    { 
+    {
         $data = CustomerGroupFormViewModel::load(0);
-        
+
         return view('customergroup.form',$data);
     }
 

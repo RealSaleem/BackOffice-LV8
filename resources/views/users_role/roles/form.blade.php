@@ -134,45 +134,77 @@
                                                 </tbody>
                                             </table>
 
-                                            <table class="table table-hover table-boarderd">
-                                                <thead>
-                                                <td class="col-md-3"><b></b></td>
-                                                <td class="col-md-2"><b></b></td>
-                                                <td class="col-md-2"><b></b></td>
-                                                <td class="col-md-2"><b></b></td>
-                                                <td class="col-md-2"><b></b></td>
-                                                </thead>
-                                                <tbody>
-
-                                                @foreach($reports as $key => $report)
-                                                    <tr>
-
-                                                        <td>{{$key}}</td>
-
-                                                        @foreach($report as $reports)
+                                            <br>
+                                            <div class="row">
+                                            @foreach($reports as $key => $report)
 
 
-                                                            <td>
-                                                                <div class="custom-control custom-checkbox ">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                           id="{{$reports->id}}" form="role-form"
-                                                                           name="permissions[]"
-                                                                           value="{{$reports->slug}}">
-                                                                    <br>
-                                                                    <label class="custom-control-label text-secondary"
-                                                                           for="{{$reports->id}}">{{$reports->display_name}}</label>
-                                                                </div>
-                                                            </td>
+                                                <div class="col-md-3 inline">
+                                                    <p>{{$key}}</p>
+                                                    @foreach($report as $index =>$reports)
 
-                                                        @endforeach
+                                                            <div class="custom-control custom-checkbox  pb-2">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                       id="{{$reports->id}}" form="role-form"
+                                                                       name="permissions[]"
+                                                                       value="{{$reports->id}}"
+                                                                       @if($model->edit_mode)
+                                                                       @if(in_array($reports->name,$name))
+                                                                       checked
+                                                                    @endif
+                                                                    @endif>
 
-                                                    </tr>
+                                                                <label class="custom-control-label text-secondary"
+                                                                       for="{{$reports->id}}">{{$reports->display_name}}</label>
+                                                            </div>
 
-                                                @endforeach
+
+                                                    @endforeach
+                                                </div>
+
+                                            @endforeach
+                                            </div>
 
 
-                                                </tbody>
-                                            </table>
+
+
+                                            {{--                                            <table class="table table-hover table-boarderd">--}}
+                                            {{--                                                <thead>--}}
+                                            {{--                                                <td class="col-md-3"><b></b></td>--}}
+                                            {{--                                                <td class="col-md-2"><b></b></td>--}}
+                                            {{--                                                <td class="col-md-2"><b></b></td>--}}
+                                            {{--                                                <td class="col-md-2"><b></b></td>--}}
+                                            {{--                                                <td class="col-md-2"><b></b></td>--}}
+                                            {{--                                                </thead>--}}
+                                            {{--                                                <tbody>--}}
+
+
+                                            {{--                                                @foreach($reports as $key => $report)--}}
+                                            {{--                                                    <tr>--}}
+                                            {{--                                                        <td>{{$key}}</td>--}}
+
+                                            {{--                                                        @foreach($report as $index =>$reports)--}}
+                                            {{--                                                            <td>--}}
+                                            {{--                                                                <div class="custom-control custom-checkbox ">--}}
+                                            {{--                                                                    <input type="checkbox" class="custom-control-input"--}}
+                                            {{--                                                                           id="{{$reports->id}}" form="role-form"--}}
+                                            {{--                                                                           name="permissions[]"--}}
+                                            {{--                                                                           value="{{$reports->slug}}">--}}
+
+                                            {{--                                                                    <label class="custom-control-label text-secondary"--}}
+                                            {{--                                                                           for="{{$reports->id}}">{{$reports->display_name}}</label>--}}
+                                            {{--                                                                </div>--}}
+                                            {{--                                                                <br>--}}
+                                            {{--                                                            </td>--}}
+
+                                            {{--                                                            @if($index==3)--}}
+                                            {{--                                                              @break--}}
+                                            {{--                                                            @endif--}}
+                                            {{--                                                        @endforeach--}}
+                                            {{--                                                    </tr>--}}
+                                            {{--                                                @endforeach--}}
+                                            {{--                                                </tbody>--}}
+                                            {{--                                            </table>--}}
 
 
                                             <div class="panel-default mt-4">

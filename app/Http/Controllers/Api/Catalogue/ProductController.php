@@ -22,6 +22,11 @@ class ProductController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-product'])->only('getProducts');
+        $this->middleware(['permission:add-product'])->only('addProduct');
+        $this->middleware(['permission:edit-product'])->only('updateProduct');
+        $this->middleware(['permission:delete-product'])->only('deleteproduct');
+
     }
 
     public function getProducts(GetAllProductRequest $request)

@@ -18,12 +18,12 @@ class UserProfileFormViewModel
 
         $user = Auth::user();
         $outlets = $user->store->outlets;
-
-            $user = [
+        $role =  $user->roles->first();
+        $user = [
                 'outlets' => $outlets,
                 'image' => [['name' => $user->name, 'url' => $user->user_image, 'size' => 0]],
                 'user' => $user,
-                'role' => $user->roles->first(),
+                'role' =>  isset($role->display_name) ? $role->display_name : "No role assigned to you.",
                 'outlet_ids' => array_column($user->outlets->toArray(), 'id')
             ];
 

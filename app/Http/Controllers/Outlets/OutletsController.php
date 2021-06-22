@@ -23,8 +23,12 @@ class OutletsController extends Controller
 
     public function __construct(RequestExecutor $requestExecutor)
     {
-        // parent::__construct();
+         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-outlet'])->only('index','show');
+        $this->middleware(['permission:add-outlet'])->only('create');
+        $this->middleware(['permission:edit-outlet'])->only('edit','business_hours','business_hours_store','updateRegister');
+
     }
 
     public function index()
@@ -69,7 +73,7 @@ class OutletsController extends Controller
         $outlet->save();
         return redirect()->route('outlets.index')->with('done', 'Business Hours has been updated');
     }
-    
+
     public function updateRegister(Request $request)
     {
         $id = $request->id;

@@ -32,6 +32,9 @@ class RoleController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:edit-role'])->only('updateRole');
+        $this->middleware(['permission:delete-role'])->only('deleteRole');
+
     }
 
     public function getRoles(GetAllRoleRequest $request)

@@ -15,6 +15,9 @@ class BrandsController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->middleware(['permission:list-brand'])->only('index');
+        $this->middleware(['permission:add-brand'])->only('create');
+        $this->middleware(['permission:edit-brand'])->only('edit');
     }
 
     public function index()

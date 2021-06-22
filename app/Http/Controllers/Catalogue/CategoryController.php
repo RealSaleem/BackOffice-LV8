@@ -12,6 +12,10 @@ class CategoryController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->middleware(['permission:list-category'])->only('index');
+        $this->middleware(['permission:add-category'])->only('create');
+        $this->middleware(['permission:edit-category'])->only('edit');
+
     }
 
     public function index()
@@ -21,7 +25,7 @@ class CategoryController extends Controller
     }
 
     public function create()
-    { 
+    {
         $model = CategoryFormViewModel::load(0);
         $data = array_merge($model, AppsVisibilityHelper::get());
         return view('catalogue.category.form',$data);

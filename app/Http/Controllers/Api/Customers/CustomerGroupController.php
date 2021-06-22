@@ -20,6 +20,10 @@ class CustomerGroupController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-customergroup'])->only('getCustomerGroup');
+        $this->middleware(['permission:add-customergroup'])->only('addCustomerGroup');
+        $this->middleware(['permission:edit-customergroup'])->only('updateCustomerGroup');
+        $this->middleware(['permission:delete-customergroup'])->only('deleteCustomerGroup');
     }
 
     public function getCustomerGroup(GetAllCustomerGroupRequest $request){

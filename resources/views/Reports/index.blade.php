@@ -99,50 +99,62 @@
                                 <label>@lang('backoffice.report_type')</label>
                                 <select name="report_type" class="form-control filter_type-select2" form="main-filters">
 
-                                    @if($per::chekStatus('reporting_sales_report'))
+                                    @can('reporting_sales-report')
                                         <option id="summary"
-                                                value="summary" {{ $report_type == 'summary' ? 'selected': null }} >@lang('backoffice.sales')</option>@endif
-                                    @if($per::chekStatus('reporting_payment_report'))
+                                                value="summary" {{ $report_type == 'summary' ? 'selected': null }} >@lang('backoffice.sales')</option>
+                                    @endcan
+                                    @can('reporting_payment_report')
                                         <option id="payment"
                                                 value="payment" {{ $report_type == "payment" ? 'selected': null }}>
                                             Payment
-                                        </option>@endif
-                                    @if($per::chekStatus('product_report'))
+                                        </option>
+                                    @endcan
+                                    @can('product-report')
                                         <option id="product"
-                                                value="product" {{ $report_type == "product" ? 'selected': null }}>@lang('backoffice.products')</option>@endif
-                                    @if($per::chekStatus('reporting_inventory_report'))
+                                                value="product" {{ $report_type == "product" ? 'selected': null }}>@lang('backoffice.products')</option>
+                                    @endcan
+                                    @can('reporting_inventory-report')
                                         <option id="inventory"
                                                 value="inventory" {{ $report_type == "inventory" ? 'selected': null }}>
                                             Inventory
-                                        </option>@endif
-                                    @if($per::chekStatus('category_report'))
+                                        </option>
+                                    @endcan
+                                    @can('category-report')
                                         <option id="category_report"
                                                 value="category_report" {{ $report_type == "category_report" ? 'selected': null }}>
                                             Category
-                                        </option>@endif
-                                    @if($per::chekStatus('reporting_register_closure'))
+                                        </option>
+                                    @endcan
+                                    @can('register_closure-report')
                                         <option id="register"
-                                                value="register" {{ $report_type == "register" ? 'selected': null }}>@lang('backoffice.register')</option>@endif
-                                    @if($per::chekStatus('customer_report'))
+                                                value="register" {{ $report_type == "register" ? 'selected': null }}>@lang('backoffice.register')</option>
+                                    @endcan
+                                    @can('customer-report')
                                         <option id="customer_report"
-                                                value="customer_report" {{ $report_type == "customer_report" ? 'selected': null }}>@lang('backoffice.customer')</option>@endif
-                                    @if($per::chekStatus('customer_group_report'))
+                                                value="customer_report" {{ $report_type == "customer_report" ? 'selected': null }}>@lang('backoffice.customer')</option>
+                                    @endcan
+                                    @can('customer_group-report')
                                         <option id="customer_group"
                                                 value="customer_group" {{ $report_type == "customer_group" ? 'selected': null }}>
                                             Customer Group
-                                        </option>@endif
-                                    @if($per::chekStatus('supplier_report'))
+                                        </option>
+                                    @endcan
+                                    @can('supplier-report')
                                         <option id="supplier_report"
-                                                value="supplier_report" {{ $report_type == "supplier_report" ? 'selected': null }}>@lang('backoffice.supplier')</option>@endif
-                                    @if($per::chekStatus('brand_report'))
+                                                value="supplier_report" {{ $report_type == "supplier_report" ? 'selected': null }}>@lang('backoffice.supplier')</option>
+                                    @endcan
+                                    @can('brand-report')
                                         <option id="brand"
-                                                value="brand" {{ $report_type == "brand" ? 'selected': null }}>@lang('backoffice.brand')</option>@endif
-                                    @if($per::chekStatus('user_report'))
+                                                value="brand" {{ $report_type == "brand" ? 'selected': null }}>@lang('backoffice.brand')</option>
+                                    @endcan
+                                    @can('user-report')
                                         <option id="user_report"
-                                                value="user_report" {{ $report_type == "user_report" ? 'selected': null }}>@lang('backoffice.user')</option>@endif
-                                    @if($per::chekStatus('addon_report'))
+                                                value="user_report" {{ $report_type == "user_report" ? 'selected': null }}>@lang('backoffice.user')</option>
+                                    @endcan
+                                    @can('addon-report')
                                         <option id="addon_report"
-                                                value="addon_report" {{ $report_type == "addon_report" ? 'selected': null }}>@lang('backoffice.addon')</option>@endif
+                                                value="addon_report" {{ $report_type == "addon_report" ? 'selected': null }}>@lang('backoffice.addon')</option>
+                                    @endcan
                                 </select>
                             </div>
                             <div class="col-sm-4 mb-3">

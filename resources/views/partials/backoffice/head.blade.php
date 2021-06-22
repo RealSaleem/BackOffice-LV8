@@ -23,7 +23,7 @@
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/intlTelInput.css')}}" rel="stylesheet">
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/toastr.css') }}"rel="stylesheet">
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/custom.css') }}"rel="stylesheet">
-    <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/angular-material.css') }}" rel="stylesheet">
+{{--    <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/angular-material.css') }}" rel="stylesheet">--}}
     <link href="{{ App\Helpers\CustomUrl::asset('backoffice/assets/css/amsify.suggestags.css') }}" rel="stylesheet">
 
 

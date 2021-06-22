@@ -21,6 +21,10 @@ class SupplierController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-supplier'])->only('getSuppliers');
+        $this->middleware(['permission:add-supplier'])->only('addSupplier');
+        $this->middleware(['permission:edit-supplier'])->only('updateSupplier');
+        $this->middleware(['permission:delete-supplier'])->only('deleteSupplier');
     }
 
     public function getSuppliers(GetAllSupplierRequest $request)

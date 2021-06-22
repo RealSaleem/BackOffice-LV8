@@ -18,6 +18,8 @@ class PermissionController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-permission'])->only('getPermission');
+        $this->middleware(['permission:add-permission'])->only('create');
     }
 
     public function getPermission(GetAllPermissionRequest $request)

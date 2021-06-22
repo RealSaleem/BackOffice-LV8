@@ -19,6 +19,10 @@ class CategoryController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-category'])->only('getCategories');
+        $this->middleware(['permission:add-category'])->only('addCategory');
+        $this->middleware(['permission:edit-category'])->only('updateCategory');
+        $this->middleware(['permission:delete-category'])->only('deleteCategory');
     }
 
     public function getCategories(GetAllCategoryRequest $request)

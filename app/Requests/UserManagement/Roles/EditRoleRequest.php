@@ -41,6 +41,7 @@ class EditRoleRequestHandler {
 
     public function Serve($request)
     {
+//        dd($request);
         try{
 
             DB::beginTransaction();
@@ -53,13 +54,6 @@ class EditRoleRequestHandler {
                 if ($request->permissions !== null) {
                     $role->syncPermissions($request->permissions);
                 }
-//                $role->permissions()->detach();
-//                if ($request->permissions !== null) {
-//                    foreach ($request->permissions as $value) {
-//                        $permission = Permission::where('name', '=', $value)->first();
-//                        $role->permissions()->attach($permission);
-//                    }
-//                }
             }
 
             DB::commit();

@@ -17,6 +17,8 @@ class AppsController extends ApiController
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-app'])->only('getapps');
+
     }
 
     public function getapps(GetAllAppsRequest $request)
@@ -26,12 +28,12 @@ class AppsController extends ApiController
         return response()->json($response->Payload);
     }
 
-   
 
- 
+
+
 }
 
 
-    
 
-    
+
+

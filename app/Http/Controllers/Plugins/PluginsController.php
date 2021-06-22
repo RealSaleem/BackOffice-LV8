@@ -12,13 +12,16 @@ use App\Models\StorePlugin;
 use App\Models\Loyalty;
 use Auth;
 
-class PluginsController extends Controller
+class
+PluginsController extends Controller
 {
 
     public function __construct(RequestExecutor $requestExecutor)
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
+        $this->middleware(['permission:list-plugin'])->only('index');
+
     }
 
     /**
@@ -367,7 +370,7 @@ class PluginsController extends Controller
         $plugins = Plugin::get();
         return view('Plugins.plugin_store',compact('plugins'));
     }
-    
+
     public function pluginpurchase(Request $request)
     {
         $pluginId = $request->id;

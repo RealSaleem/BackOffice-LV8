@@ -7,6 +7,13 @@ use App\ViewModels\PermissionFormViewModel;
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware(['permission:list-permission'])->only('index');
+        $this->middleware(['permission:add-permission'])->only('create');
+
+    }
     public function index()
     {
         return view('users_role.permissions.index');

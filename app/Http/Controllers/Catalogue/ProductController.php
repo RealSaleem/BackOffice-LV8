@@ -15,6 +15,9 @@ class ProductController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->middleware(['permission:list-product'])->only('index');
+        $this->middleware(['permission:add-product'])->only('create');
+        $this->middleware(['permission:edit-product'])->only('edit');
     }
 
     public function index()
