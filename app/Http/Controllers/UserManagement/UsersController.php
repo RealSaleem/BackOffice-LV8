@@ -15,9 +15,9 @@ class UsersController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware(['permission:list-user'])->only('index');
-        $this->middleware(['permission:add-user'])->only('create');
-        $this->middleware(['permission:edit-user'])->only('edit');
+        $this->middleware(['role:admin','permission:list-user'])->only('index');
+        $this->middleware(['role:admin','permission:add-user'])->only('create');
+        $this->middleware(['role:admin','permission:edit-user'])->only('edit');
     }
 
     public function index()

@@ -17,8 +17,8 @@ class RoleController extends Controller
     {
         parent::__construct();
         $this->RequestExecutor = $requestExecutor;
-        $this->middleware(['permission:list-role'])->only('index');
-        $this->middleware(['permission:add-role'])->only('create');
+        $this->middleware(['role:admin','permission:list-role'])->only('index');
+        $this->middleware(['role:admin','permission:add-role'])->only('create');
 
     }
 

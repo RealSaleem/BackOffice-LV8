@@ -10,8 +10,8 @@ class PermissionController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware(['permission:list-permission'])->only('index');
-        $this->middleware(['permission:add-permission'])->only('create');
+        $this->middleware(['role:admin','permission:list-permission'])->only('index');
+        $this->middleware(['role:admin','permission:add-permission'])->only('create');
 
     }
     public function index()

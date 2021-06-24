@@ -152,7 +152,7 @@
                                 </ul>
                             </li>
                         @endcanany
-
+                        @role('admin')
                         @canany(['list-user','list-role','list-permission'])
                             <li>
                                 <a href class="auto" title="Users">
@@ -160,32 +160,30 @@
                                     <span>@lang('backoffice.user_management')</span>
                                 </a>
                                 <ul class="nav nav-sub dk">
-                                    {{--                                @if( $per::chekStatus('user_list','admin'))--}}
 
                                     <li>
                                         <a href="{{route('users.index')}}">
                                             <span>@lang('backoffice.user')</span>
                                         </a>
                                     </li>
-                                    {{--                                @endif--}}
-                                    {{--                                @if( $per::chekStatus('roles_list','admin'))--}}
-
+                                
                                     <li>
                                         <a href="{{route('roles.index')}}">
                                             <span>@lang('backoffice.role_permissions')</span>
                                         </a>
                                     </li>
                                     {{--                                @endif--}}
-                                    @role('admin')
+                                   
                                     <li>
                                         <a href="{{route('permission.index')}}">
                                             <span>Permission</span>
                                         </a>
                                     </li>
-                                    @endrole
+                                   
                                 </ul>
                             </li>
                         @endcanany
+                        @endrole
 
                         @can('list-app')
                             <li>
