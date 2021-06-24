@@ -21,6 +21,8 @@
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_addon') }}
                                     </a>
+                                @endcan
+                                @can('list-addons')
                                     <a href="{{ route('item.index')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.item_title') }}

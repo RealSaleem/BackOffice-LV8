@@ -127,14 +127,15 @@
                                                             <td><div class="expend"></div> {{$customers->name}}</td>
                                                             <td>{{$customers->mobile}}</td>
                                                             <td>{{$customers->email}}</td>
-                                                            @if( $permission::chekStatus('customer_edit','admin'))
+
+                                                            @can('edit-customer')
                                                                 <td>
                                                                     <a href="{{url('customer/edit/') }}"
                                                                        class="badge btn-primary">
                                                                         {{ __('backoffice.edit') }}
                                                                     </a>
                                                                 </td>
-                                                            @endif
+                                                         @endcan
                                                         </tr>
                                                     @endforeach
                                                 @endif
@@ -203,11 +204,11 @@
                     {
                         data: 'actions', 'render': function (column, row, data, other) {
                             return `
-                             @if( $permission::chekStatus('customer_edit','admin'))
+                             @can('edit-customer')
                             <a href='{{ url('customers/customer/${data.id}/edit') }}' class="badge btn-primary">
                                 {{ __('backoffice.edit') }}
                             </a>
-                            @endif`;
+                            @endcan`;
                         }
                     },
                 ],
