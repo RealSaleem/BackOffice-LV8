@@ -16,7 +16,7 @@
                         <div class="common_title">
                             <h1>
                                 {{ __('backoffice.addons') }}
-                                @can('list-addons')
+                                @can('add-addons')
                                     <a href="{{ route('addon.create')}}"
                                        class="m-b-xs w-auto btn-primary btn-sm pull-right">
                                         {{ __('backoffice.add_addon') }}
